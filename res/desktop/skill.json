@@ -1,9 +1,9 @@
 {
   "name": "Confucius Quotes Skill",
-  "skillname": "skill-confucius",
+  "skillname": "skill-confucius-quotes",
   "authorname": "JarbasSkills",
   "foldername": "",
-  "url": "https://github.com/JarbasSkills/skill-confucius",
+  "url": "https://github.com/JarbasSkills/skill-confucius-quotes",
   "branch": "master",
   "desktopFile": false,
   "warning": "",

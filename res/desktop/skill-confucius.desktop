@@ -2,8 +2,8 @@
 Terminal=false
 Type=Application
 Name=ConfuciusQuotes
-Exec=mycroft-gui-app --hideTextInput --skill=skill-confucius.jarbasskills.home
-Icon=icon.png
+Exec=mycroft-gui-app --hideTextInput --skill=skill-confucius-quotes.jarbasskills.home
+Icon=confucius.png
 Categories=VoiceApp
 StartupNotify=false
 X-DBUS-StartupType=None
