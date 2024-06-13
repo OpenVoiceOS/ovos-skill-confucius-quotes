@@ -4,12 +4,11 @@ TODO - on commit to dev
 """
 
 import json
-from os.path import dirname
 import os
+from os.path import dirname
 
 locale = f"{dirname(dirname(__file__))}/locale"
 tx = f"{dirname(dirname(__file__))}/translations"
-
 
 for lang in os.listdir(locale):
     intents = {}
@@ -25,9 +24,9 @@ for lang in os.listdir(locale):
             else:
                 fid = f
             with open(f"{root}/{f}") as fi:
-                strings = [l.replace("{{", "{").replace("}}", "}")
-                           for l in fi.read().split("\n") if l.strip()
-                           and not l.startswith("#")]
+                strings = sorted(list(set([l.replace("{{", "{").replace("}}", "}")
+                                           for l in fi.read().split("\n") if l.strip()
+                                           and not l.startswith("#")])))
 
             if fid.endswith(".intent"):
                 intents[fid] = strings

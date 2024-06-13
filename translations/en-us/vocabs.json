@@ -3,12 +3,12 @@
         "when"
     ],
     "live.voc": [
-        "live",
-        "alive"
+        "alive",
+        "live"
     ],
     "death.voc": [
-        "die",
-        "death"
+        "death",
+        "die"
     ],
     "quote.voc": [
         "quote",
@@ -16,9 +16,9 @@
         "saying"
     ],
     "birth.voc": [
-        "born",
         "birth",
-        "birthday"
+        "birthday",
+        "born"
     ],
     "confucius.voc": [
         "confucius"
