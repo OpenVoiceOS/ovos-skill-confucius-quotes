@@ -1,7 +1,6 @@
 {
     "when.voc": [
-        "live",
-        "alive"
+        "when"
     ],
     "live.voc": [
         "live",
