@@ -1,0 +1,27 @@
+{
+    "when.voc": [
+        "live",
+        "alive"
+    ],
+    "live.voc": [
+        "live",
+        "alive"
+    ],
+    "death.voc": [
+        "die",
+        "death"
+    ],
+    "quote.voc": [
+        "quote",
+        "say",
+        "saying"
+    ],
+    "birth.voc": [
+        "born",
+        "birth",
+        "birthday"
+    ],
+    "confucius.voc": [
+        "confucius"
+    ]
+}

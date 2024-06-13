@@ -1,4 +1,4 @@
-# <img src='./res/icon/confucius.png' width='50' height='50' style='vertical-align:bottom'/> Confucius Quotes
+# <img src='.confucius.png' width='50' height='50' style='vertical-align:bottom'/> Confucius Quotes
 
 
 ## About

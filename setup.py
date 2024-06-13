@@ -10,7 +10,7 @@ URL = "https://github.com/OVOSHatchery/ovos-skill-confucius-quotes"
 AUTHOR = "OpenVoiceOS"
 EMAIL = "jarbasai@mailfence.com"
 LICENSE = "Apache2.0"
-DESCRIPTION = SKILL_CLAZZ # TODO
+DESCRIPTION = "basic info and quotes from confucius"
 
 PYPI_NAME = URL.split("/")[-1]  # pip install PYPI_NAME
 
@@ -36,7 +36,7 @@ def get_requirements(requirements_filename: str = "requirements.txt"):
 
 # Function to find resource files
 def find_resource_files():
-    resource_base_dirs = ("locale", "ui", "vocab", "dialog", "regex", "res")
+    resource_base_dirs = ("locale", "ui")
     base_dir = abspath(dirname(__file__))
     package_data = ["*.json"]
     for res in resource_base_dirs:
