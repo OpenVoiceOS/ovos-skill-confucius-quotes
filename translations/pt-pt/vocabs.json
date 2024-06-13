@@ -3,21 +3,21 @@
     "quando"
   ],
   "live.voc": [
-    null,
+    "viveu",
     "vivo"
   ],
   "death.voc": [
-    null,
+    "morreu",
     "morte"
   ],
   "quote.voc": [
-    null,
-    null,
+    "citação",
+    "diria",
     "ditado"
   ],
   "birth.voc": [
-    null,
-    null,
+    "nasceu",
+    "(data de|) nascimento",
     "aniversário"
   ],
   "confucius.voc": [
