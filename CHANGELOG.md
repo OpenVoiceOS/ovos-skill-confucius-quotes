@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/HEAD)
+## [V0.0.1a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/V0.0.1a2) (2024-09-02)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/861b68bb2cd9f5634508e30df58f258f6bca47d9...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/861b68bb2cd9f5634508e30df58f258f6bca47d9...V0.0.1a2)
 
 **Fixed bugs:**
 
