@@ -1,3 +1,0 @@
-[ovos.plugin.skill]
-ovos-skill-confucius-quotes.openvoiceos=ovos_skill_confucius_quotes:ConfuciusQuotesSkill
-
