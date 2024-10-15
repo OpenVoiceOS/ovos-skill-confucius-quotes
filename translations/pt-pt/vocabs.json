@@ -1,14 +1,14 @@
 {
   "when.voc": [
-    "quando"
+    "(quando|em que tempo|em que epoca)"
   ],
   "live.voc": [
-    "viveu",
-    "vivo"
+    "vivo",
+    "viveu"
   ],
   "death.voc": [
-    "morreu",
-    "morte"
+    "(faleceu|morreu)",
+    "data de (morte|falecimento)"
   ],
   "quote.voc": [
     "citação",
@@ -16,9 +16,9 @@
     "ditado"
   ],
   "birth.voc": [
-    "nasceu",
-    "(data de|) nascimento",
-    "aniversário"
+    "(data de|) (nascimento|aniversário)",
+    "aniversário",
+    "nasceu"
   ],
   "confucius.voc": [
     "Confúcio"
