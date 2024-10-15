@@ -1,16 +1,13 @@
 # Changelog
 
-## [V0.0.1a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/V0.0.1a2) (2024-09-02)
+## [0.1.1a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.1a1) (2024-10-15)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/861b68bb2cd9f5634508e30df58f258f6bca47d9...V0.0.1a2)
-
-**Fixed bugs:**
-
-- fix/image\_time [\#3](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/3) ([JarbasAl](https://github.com/JarbasAl))
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/V0.0.1...0.1.1a1)
 
 **Merged pull requests:**
 
-- pt-pt/translate [\#2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/2) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+- fix:update\_requirements [\#6](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/6) ([JarbasAl](https://github.com/JarbasAl))
+- Add Catalan translation [\#5](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/5) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
 
 
 

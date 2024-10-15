@@ -1,0 +1,26 @@
+{
+  "when.voc": [
+    "quan"
+  ],
+  "live.voc": [
+    "va viure\nvisqué",
+    "viu\nvida"
+  ],
+  "death.voc": [
+    "mort\nmorí\nva morir",
+    "morir\nmort"
+  ],
+  "quote.voc": [
+    "cita",
+    "digué\nva dir",
+    "dita"
+  ],
+  "birth.voc": [
+    "naixement",
+    "aniversari\ndia de naixement\ndia del naixement",
+    "nascut\nnéixer\nnàixer"
+  ],
+  "confucius.voc": [
+    "confuci"
+  ]
+}
