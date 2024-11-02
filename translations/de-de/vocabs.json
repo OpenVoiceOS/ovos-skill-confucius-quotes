@@ -1,0 +1,26 @@
+{
+  "when.voc": [
+    "Wann"
+  ],
+  "live.voc": [
+    "lebte",
+    "leben"
+  ],
+  "death.voc": [
+    "gestorben",
+    "starb"
+  ],
+  "quote.voc": [
+    "Zitat",
+    "sage",
+    "sagte"
+  ],
+  "birth.voc": [
+    "Geburt",
+    "Geburtstag",
+    "geboren"
+  ],
+  "confucius.voc": [
+    "Konfuzius"
+  ]
+}
