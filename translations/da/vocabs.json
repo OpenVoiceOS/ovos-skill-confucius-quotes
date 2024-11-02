@@ -3,22 +3,22 @@
     "hvornår"
   ],
   "live.voc": [
-    null,
-    null
+    "i live",
+    "levende"
   ],
   "death.voc": [
-    null,
-    null
+    "død",
+    "dø"
   ],
   "quote.voc": [
-    null,
-    null,
-    null
+    "citere",
+    "sige",
+    "ordsprog"
   ],
   "birth.voc": [
-    null,
-    null,
-    null
+    "fødsel",
+    "fødselsdag",
+    "født"
   ],
   "confucius.voc": [
     "confucius"
