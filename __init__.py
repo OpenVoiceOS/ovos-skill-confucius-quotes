@@ -1,5 +1,3 @@
-from os.path import join, dirname
-
 from ovos_workshop.decorators import intent_handler
 from ovos_workshop.intents import IntentBuilder
 from ovos_workshop.skills import OVOSSkill
@@ -8,7 +6,7 @@ from ovos_workshop.skills import OVOSSkill
 class ConfuciusQuotesSkill(OVOSSkill):
 
     def show_confucius(self, caption):
-        self.gui.show_image(join(dirname(__file__), "ui", "confucius.jpg"),
+        self.gui.show_image("confucius.jpg",
                             caption=caption,
                             override_idle=10,
                             override_animations=True,

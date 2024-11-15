@@ -1,16 +1,35 @@
 # Changelog
 
-## [0.1.3a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.3a1) (2024-10-31)
+## [0.1.5a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.5a1) (2024-11-15)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/V0.1.2...0.1.3a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.4a2...0.1.5a1)
 
 **Merged pull requests:**
 
-- fix:allow workshop 3.0.0 [\#10](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/10) ([JarbasAl](https://github.com/JarbasAl))
+- fix:automationa [\#17](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/17) ([JarbasAl](https://github.com/JarbasAl))
 
-## [V0.1.2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/V0.1.2) (2024-10-15)
+## [0.1.4a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.4a2) (2024-11-03)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.2...V0.1.2)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.4a1...0.1.4a2)
+
+**Merged pull requests:**
+
+- de-de/translate [\#16](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/16) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+- de-de/translate [\#15](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/15) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+- da-dk/translate [\#14](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/14) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+
+## [0.1.4a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.4a1) (2024-11-02)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/V0.1.3...0.1.4a1)
+
+**Merged pull requests:**
+
+- da-dk/translate [\#13](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/13) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+- de-de/translate [\#12](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/12) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+
+## [V0.1.3](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/V0.1.3) (2024-10-31)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.3...V0.1.3)
 
 
 

@@ -6,7 +6,7 @@ import os
 
 # Define package information
 SKILL_CLAZZ = "ConfuciusQuotesSkill"  # Make sure it matches __init__.py class name
-URL = "https://github.com/OVOSHatchery/ovos-skill-confucius-quotes"
+URL = "https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes"
 AUTHOR = "OpenVoiceOS"
 EMAIL = "jarbasai@mailfence.com"
 LICENSE = "Apache2.0"
@@ -36,7 +36,7 @@ def get_requirements(requirements_filename: str = "requirements.txt"):
 
 # Function to find resource files
 def find_resource_files():
-    resource_base_dirs = ("locale", "ui")
+    resource_base_dirs = ("locale", "gui")
     base_dir = abspath(dirname(__file__))
     package_data = ["*.json"]
     for res in resource_base_dirs:

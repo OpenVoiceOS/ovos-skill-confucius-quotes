@@ -1,0 +1,26 @@
+{
+  "when.voc": [
+    "hvornår"
+  ],
+  "live.voc": [
+    "i live",
+    "levende"
+  ],
+  "death.voc": [
+    "død",
+    "dø"
+  ],
+  "quote.voc": [
+    "citere",
+    "sige",
+    "ordsprog"
+  ],
+  "birth.voc": [
+    "fødsel",
+    "fødselsdag",
+    "født"
+  ],
+  "confucius.voc": [
+    "confucius"
+  ]
+}
