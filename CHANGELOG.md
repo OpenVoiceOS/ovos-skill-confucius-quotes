@@ -1,11 +1,20 @@
 # Changelog
 
-## [0.1.4a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.4a1) (2024-11-02)
+## [0.1.5a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.5a1) (2024-11-15)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.4a1...0.1.4a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.4a2...0.1.5a1)
 
 **Merged pull requests:**
 
+- fix:automationa [\#17](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/17) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.1.4a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.4a2) (2024-11-03)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.4a1...0.1.4a2)
+
+**Merged pull requests:**
+
+- de-de/translate [\#16](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/16) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
 - de-de/translate [\#15](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/15) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
 - da-dk/translate [\#14](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/14) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
 
