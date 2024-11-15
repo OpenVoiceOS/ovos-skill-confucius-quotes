@@ -6,7 +6,7 @@ import os
 
 # Define package information
 SKILL_CLAZZ = "ConfuciusQuotesSkill"  # Make sure it matches __init__.py class name
-URL = "https://github.com/OVOSHatchery/ovos-skill-confucius-quotes"
+URL = "https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes"
 AUTHOR = "OpenVoiceOS"
 EMAIL = "jarbasai@mailfence.com"
 LICENSE = "Apache2.0"
