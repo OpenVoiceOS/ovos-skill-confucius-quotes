@@ -4,7 +4,7 @@ from os.path import dirname
 from ovos_plugin_manager.skills import find_skill_plugins
 from ovos_utils.messagebus import FakeBus
 from ovos_workshop.skill_launcher import PluginSkillLoader, SkillLoader
-from ovos_skill_cmd import CmdSkill
+from ovos_skill_confucius_quotes import ConfuciusQuotesSkill
 
 
 class TestSkillLoading(unittest.TestCase):
@@ -15,7 +15,7 @@ class TestSkillLoading(unittest.TestCase):
 
     def test_from_class(self):
         bus = FakeBus()
-        skill = CmdSkill()
+        skill = ConfuciusQuotesSkill()
         skill._startup(bus, self.skill_id)
         self.assertEqual(skill.bus, bus)
         self.assertEqual(skill.skill_id, self.skill_id)
