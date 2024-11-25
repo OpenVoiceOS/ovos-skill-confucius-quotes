@@ -1,16 +1,16 @@
 # Changelog
 
-## [0.1.7a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.7a1) (2024-11-19)
+## [0.1.8a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.8a1) (2024-11-25)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/V0.1.6...0.1.7a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/V0.1.7...0.1.8a1)
 
 **Merged pull requests:**
 
-- fix:requirements.txt [\#21](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/21) ([JarbasAl](https://github.com/JarbasAl))
+- da-dk/translate [\#23](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/23) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
 
-## [V0.1.6](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/V0.1.6) (2024-11-15)
+## [V0.1.7](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/V0.1.7) (2024-11-19)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.6...V0.1.6)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.7...V0.1.7)
 
 
 
