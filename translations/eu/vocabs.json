@@ -1,0 +1,26 @@
+{
+  "when.voc": [
+    "noiz"
+  ],
+  "live.voc": [
+    "bizirik",
+    "bizi"
+  ],
+  "death.voc": [
+    "heriotza",
+    "hil"
+  ],
+  "quote.voc": [
+    "aipamena",
+    "esan",
+    "esanez"
+  ],
+  "birth.voc": [
+    "jaiotza",
+    "urtebetetzea",
+    "jaioa"
+  ],
+  "confucius.voc": [
+    "konfuzio"
+  ]
+}
