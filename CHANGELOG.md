@@ -1,8 +1,16 @@
 # Changelog
 
-## [V0.1.12](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/V0.1.12) (2025-06-08)
+## [0.1.14a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.14a1) (2025-12-18)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.12...V0.1.12)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/V0.1.13...0.1.14a1)
+
+**Merged pull requests:**
+
+- chore: Configure Renovate [\#34](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/34) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [V0.1.13](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/V0.1.13) (2025-06-08)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.13...V0.1.13)
 
 
 
