@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.14a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.14a2) (2025-12-19)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.14a1...0.1.14a2)
+
+**Merged pull requests:**
+
+- chore\(deps\): update actions/setup-python action to v6 [\#39](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/39) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.1.14a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.14a1) (2025-12-18)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/V0.1.13...0.1.14a1)
