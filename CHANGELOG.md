@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.14a4](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.14a4) (2025-12-20)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.14a3...0.1.14a4)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency ovos-workshop to v8 [\#42](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/42) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.1.14a3](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.14a3) (2025-12-19)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.14a2...0.1.14a3)
