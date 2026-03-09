@@ -30,10 +30,10 @@ jobs:
           sudo apt install python3-dev swig libssl-dev
       - name: Build Source Packages
         run: |
-          python setup.py sdist
+          python -m build
       - name: Build Distribution Packages
         run: |
-          python setup.py bdist_wheel
+          python -m build
       - name: Install skill
         run: |
           pip install .
