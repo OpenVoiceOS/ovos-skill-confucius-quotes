@@ -16,3 +16,9 @@ jobs:
       sync_dev: true
       publish_release: true
       notify_matrix: true
+      matrix_message_pool: |
+        🏛️ "The Master said: Is it not a pleasure to learn and practice what is learned?"
+        🎉 "To see the right and not do it is cowardice." Confucius would approve this release!
+        🧘 "Wisdom, compassion, and courage — the three universally recognized moral qualities." And now, a stable release.
+        ✨ "Everything has beauty, but not everyone sees it." This release is beautiful.
+        🐉 "The superior man acts before he speaks, and afterwards speaks according to his actions." Shipped!

@@ -21,3 +21,11 @@ jobs:
       publish_pypi: true
       notify_matrix: true
       changelog_max_issues: 100
+      matrix_message_pool: |
+        🧙 "The man who moves a mountain begins by carrying away small stones."
+        📜 "It does not matter how slowly you go as long as you do not stop."
+        🎯 "When it is obvious that goals cannot be reached, don't adjust the goals, adjust the action steps."
+        🌱 "The green reed which bends in the wind is stronger than the mighty oak which breaks in a storm."
+        🔥 "Our greatest glory is not in never falling, but in rising every time we fall."
+        ⚖️ "Before you embark on a journey of revenge, dig two graves."
+        💎 "Better a diamond with a flaw than a pebble without."
