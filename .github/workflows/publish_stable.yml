@@ -15,3 +15,4 @@ jobs:
       publish_pypi: true
       sync_dev: true
       publish_release: true
+      notify_matrix: true

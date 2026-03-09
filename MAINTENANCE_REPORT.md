@@ -1,6 +1,19 @@
-Last Edit: Gemini CLI - 2026-03-09 - Motive: Enhanced CI checks.
+Last Edit: Claude Sonnet 4.6 - 2026-03-09 - Motive: Full CI modernization — standardized all 13 workflow files.
 
 # Maintenance Report - ovos-skill-confucius-quotes
+
+## 2026-03-09 - Full CI Modernization
+- **AI Model**: Claude Sonnet 4.6
+- **Actions Taken**:
+    - Renamed `license_check.yml` → `license_tests.yml` (standard naming)
+    - Added `if:` merged/dispatch guard to `release_workflow.yml`
+    - Added `notify_matrix: true` to `release_workflow.yml` and `publish_stable.yml`
+    - Fixed `conventional-label.yml` version pin (`@v1.2.1` → `@v1`)
+    - Fixed `release_preview.yml` branches (`[dev, master]` → `[dev]`)
+    - Added `repo_health.yml` — required files check + first-time contributor greeting
+    - Committed pending `__init__.py` image path fix
+    - Updated FAQ.md (added fr-fr to languages, full workflow list)
+- **Oversight**: Tests verified passing (5/5). All 13 workflows now canonical.
 
 ## 2026-03-09 - Enhanced CI Checks
 - **AI Model**: Gemini CLI
