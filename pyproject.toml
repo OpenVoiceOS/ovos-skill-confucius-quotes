@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos-skill-confucius-quotes"
+description = "basic info and quotes from confucius"
+readme = "README.md"
+authors = [
+    { name = "OpenVoiceOS", email = "jarbasai@mailfence.com" }
+]
+license = { text = "Apache2.0" }
+keywords = ["ovos", "skill", "plugin"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "ovos-workshop>=8.0.0,<8.1.0",
+    "ovos-bus-client>=1.0.1"
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes"
+
+[project.entry-points."ovos.plugin.skill"]
+"ovos-skill-confucius-quotes.openvoiceos" = "ovos_skill_confucius_quotes:ConfuciusQuotesSkill"
+
+[tool.setuptools]
+package-dir = { "ovos_skill_confucius_quotes" = "" }
+packages = ["ovos_skill_confucius_quotes"]
+
+[tool.setuptools.package-data]
+"ovos_skill_confucius_quotes" = ["*.json", "locale/**", "gui/**"]
+
+[tool.setuptools.dynamic]
+version = { attr = "version.__version__" }
