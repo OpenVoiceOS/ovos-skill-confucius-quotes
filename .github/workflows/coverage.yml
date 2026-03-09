@@ -11,3 +11,5 @@ jobs:
     with:
       python_version: "3.11"
       coverage_source: "ovos_skill_confucius_quotes"
+      min_coverage: 80
+      install_extras: ".[test]"

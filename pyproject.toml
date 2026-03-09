@@ -23,7 +23,7 @@ dependencies = [
 dynamic = ["version"]
 
 [project.optional-dependencies]
-dev = [
+test = [
     "ovoscope>=0.7.0"
 ]
 
