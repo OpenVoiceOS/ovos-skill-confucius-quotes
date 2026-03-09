@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.0a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.2.0a1) (2026-03-09)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.14a5...0.2.0a1)
+
+**Merged pull requests:**
+
+- feat: new automations [\#46](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/46) ([JarbasAl](https://github.com/JarbasAl))
+- Add fr-fr locale [\#45](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/45) ([goldyfruit](https://github.com/goldyfruit))
+
 ## [0.1.14a5](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.14a5) (2026-01-19)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.14a4...0.1.14a5)
