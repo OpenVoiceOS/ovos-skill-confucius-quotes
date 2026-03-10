@@ -8,3 +8,7 @@ jobs:
   skill_check:
     uses: OpenVoiceOS/gh-automations/.github/workflows/skill-check.yml@dev
     secrets: inherit
+    with:
+      pr_comment: true
+      fail_on_missing_en_us: true
+      fail_on_invalid_skill_json: true

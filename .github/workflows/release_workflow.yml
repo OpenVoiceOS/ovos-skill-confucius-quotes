@@ -20,6 +20,7 @@ jobs:
       propose_release: true
       publish_pypi: true
       notify_matrix: true
+      skip_bot_prs: true
       changelog_max_issues: 100
       matrix_message_pool: |
         🧙 "The man who moves a mountain begins by carrying away small stones."

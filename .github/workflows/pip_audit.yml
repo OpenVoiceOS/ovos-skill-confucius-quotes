@@ -8,3 +8,7 @@ jobs:
   pip_audit:
     uses: OpenVoiceOS/gh-automations/.github/workflows/pip-audit.yml@dev
     secrets: inherit
+    with:
+      pr_comment: true
+      upload_sarif: true
+      warn_only: false

@@ -10,3 +10,5 @@ jobs:
     secrets: inherit
     with:
       package_name: "ovos-skill-confucius-quotes"
+      version_file: "version.py"
+      pr_comment: true

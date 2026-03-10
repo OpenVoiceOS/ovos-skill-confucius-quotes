@@ -11,3 +11,5 @@ jobs:
     with:
       package_name: "ovos-skill-confucius-quotes"
       entry_point: "ovos-skill-confucius-quotes.openvoiceos"
+      system_deps: 'swig'
+      pr_comment: true
