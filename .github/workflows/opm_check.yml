@@ -9,5 +9,9 @@ jobs:
     uses: OpenVoiceOS/gh-automations/.github/workflows/opm-check.yml@dev
     secrets: inherit
     with:
+      system_deps: 'swig'
       plugin_type: "skill"
-      entry_point: "ovos-skill-confucius-quotes.openvoiceos"
+      opm_require_found: true
+      opm_validate_interface: true
+      opm_test_import: true
+      opm_perf_threshold_ms: 500

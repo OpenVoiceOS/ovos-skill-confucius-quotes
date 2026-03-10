@@ -9,9 +9,11 @@ permissions:
 
 jobs:
   coverage_pages:
-    uses: OpenVoiceOS/gh-automations/.github/workflows/coverage-pages.yml@dev
+    uses: OpenVoiceOS/gh-automations/.github/workflows/coverage.yml@dev
     secrets: inherit
     with:
       python_version: "3.11"
       system_deps: 'swig'
       coverage_source: "ovos_skill_confucius_quotes"
+      deploy_pages: true
+      gh_pages_branch: "gh-pages"
