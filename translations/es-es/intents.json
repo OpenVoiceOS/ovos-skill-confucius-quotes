@@ -1,6 +1,10 @@
 {
   "who.intent": [
-    "¿Quién es Confucio?",
-    "¿Quién fue Confucio?"
+    "quien es Confucio",
+    "quien fue Confucio",
+    "quién es Confucio",
+    "quién fue Confucio",
+    "qué sabes de Confucio",
+    "cuéntame sobre Confucio"
   ]
 }

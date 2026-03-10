@@ -1,4 +1,5 @@
-# ❓ FAQ - Confucius Quotes Skill
+
+# FAQ - Confucius Quotes Skill
 
 ## 🌟 General Questions
 
@@ -17,6 +18,7 @@ The skill is fully localized and supports:
 - Spanish (`es-es`)
 - Basque (`eu`)
 - Catalan (`ca-es`)
+- French (`fr-fr`)
 
 ### Is there a cost?
 **No.** This is a free and open-source skill, part of the OpenVoiceOS ecosystem.
@@ -33,12 +35,19 @@ The source of truth for the version is in `version.py` within the `START_VERSION
 
 ### Which CI/CD workflows are used?
 This repository uses the latest `gh-automations@dev` workflows, including:
-- `release_workflow.yml`: Alpha releases on PR merge.
-- `publish_stable.yml`: Stable releases on push to master.
-- `skill_check.yml`: Locale and `skill.json` validation.
-- `coverage.yml`: Automated test coverage reporting.
-- `license_check.yml`: Dependency license auditing.
-- `sync_translations.yml`: Automated translation synchronization.
+- `release_workflow.yml`: Alpha releases on PR merge
+- `publish_stable.yml`: Stable releases on push to master
+- `build_tests.yml`: Build/install verification across Python 3.10-3.12
+- `coverage.yml`: Automated test coverage (min 80%)
+- `skill_check.yml`: Locale and `skill.json` validation
+- `release_preview.yml`: Version bump prediction on PRs
+- `repo_health.yml`: Required files and contributor welcome
+- `license_tests.yml`: Dependency license auditing
+- `pip_audit.yml`: Security vulnerability scanning
+- `python_support.yml`: Python compatibility matrix + OPM detection
+- `downstream_check.yml`: Downstream dependency verification
+- `sync_translations.yml`: Automated translation synchronization
+- `conventional-label.yml`: Auto-labels PRs from title prefix
 
 ### How do I run tests locally?
 You can run tests using `pytest`:
@@ -49,3 +58,50 @@ For coverage reporting:
 ```bash
 uv run pytest --cov=ovos_skill_confucius_quotes test/
 ```
+
+### How are the end-to-end tests structured?
+
+18 tests across 4 test classes:
+- **TestConfuciusAdaptEN** (7 tests): All 4 Adapt intents in en-US with alternative phrasings
+- **TestConfuciusPadatiousEN** (2 tests): Padatious `who.intent` in en-US
+- **TestConfuciusMultilingual** (6 tests): Adapt + Padatious in pt-PT, de-DE, es-ES using `secondary_langs`
+- **TestConfuciusFixtures** (3 tests): Replay from recorded JSON fixtures
+
+### How do the multilingual tests work?
+
+MiniCroft's `secondary_langs` parameter patches `Configuration()["secondary_langs"]` before Adapt/Padatious initialize, so they register vocab engines for all specified languages. Without this, only the system's default language has vocab registered.
+
+### How do I regenerate the JSON fixtures?
+
+```bash
+python test/end2end/generate_fixtures.py
+```
+
+This records live message sequences and saves them as anonymized JSON. Fixtures validate message types and routing but skip data/context checks due to non-deterministic dialog rendering and session timestamps.
+
+### Why did the German and Spanish `who.intent` tests fail with Padacioso?
+
+The original `locale/de-de/who.intent` used a regex-like grouping syntax (`(Konfuzius|Confuzius)?`) and `locale/es-es/who.intent` used special punctuation (`¿Quién es Confucio?`). Padatious/Padacioso does not support these formats — it expects one plain utterance per line.
+
+The files were rewritten to use plain text (one variant per line, no parentheses or special punctuation). The `translations/<lang>/intents.json` files were updated to match, and `scripts/sync_translations.py` was run to confirm the locale files regenerate correctly.
+
+### What is the relationship between `translations/` and `locale/`?
+
+`translations/<lang>/*.json` is the **source of truth** — these are the files that gitlocalize-app edits in translation PRs. `scripts/sync_translations.py` reads the JSON files and writes the locale files. When editing intent/dialog/vocab text, always update the JSON files and run the sync script to regenerate locale files. Never edit locale files directly without updating the corresponding JSON.
+
+### Why is `require_adapt: true` set in `ovoscope.yml`?
+
+The skill tests Adapt intents (ConfuciusQuote, ConfuciusLive, ConfuciusBirth, ConfuciusDeath). Setting `require_adapt: true` makes CI fail explicitly if `ovos-adapt-pipeline-plugin` is missing from `[test]` deps, rather than silently skipping those tests and passing with reduced coverage.
+
+### Why do M2V tests skip when the multilingual model is not cached?
+`ovos-m2v-pipeline` classifies utterances using a pre-trained model. A language-specific model (e.g. Portuguese-only) will not contain English intent names and always returns no match. The test forces the multilingual model via `pipeline_config`, but skips if it is not cached locally to avoid downloading a large model. To enable M2V tests locally, download the model once:
+```bash
+python -c "from model2vec.inference import StaticModelPipeline; StaticModelPipeline.from_pretrained('Jarbas/ovos-model2vec-intents-distiluse-base-multilingual-cased-v2')"
+```
+
+### Why are `intent.service.adapt.manifest.*` messages in EXTRA_IGNORED?
+`ovos-m2v-pipeline` runs a background intent-sync thread that fires `intent.service.adapt.manifest.get` and `intent.service.adapt.manifest` (request + response) approximately 3 seconds after startup. These messages appear on the FakeBus and can inflate the captured message count during early tests. Adding them to `EXTRA_IGNORED` filters them out so tests aren't sensitive to M2V's async sync timing.
+
+### Why does the skill use `speak()` with manual `meta` instead of `speak_dialog()`?
+
+The skill needs the rendered dialog text for the GUI caption (`show_confucius(utterance)`) before speaking it. Using `speak_dialog()` would render internally and not expose the text for the GUI. Instead, it renders manually via `dialog_renderer.render()`, shows the GUI, then calls `speak()` with explicit `meta={"dialog": ..., "data": {}, "skill": ...}` to preserve dialog traceability.
