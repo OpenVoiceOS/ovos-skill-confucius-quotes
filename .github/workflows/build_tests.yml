@@ -13,11 +13,3 @@ jobs:
     with:
       system_deps: 'swig'
       test_path: "test/"
-      package_name: "ovos-skill-confucius-quotes"
-      entry_point: "ovos-skill-confucius-quotes.openvoiceos"
-      plugin_type: "skill"
-      pr_comment: true
-      opm_section: true
-      opm_validate_interface: true
-      opm_test_import: true
-      opm_perf_threshold_ms: 500
