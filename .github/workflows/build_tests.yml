@@ -12,5 +12,4 @@ jobs:
     secrets: inherit
     with:
       system_deps: 'swig'
-      install_extras: "test"
-      test_path: "test/"
+      test_path: "test/test_skill_loading.py test/test_plugin.py"

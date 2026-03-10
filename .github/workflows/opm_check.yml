@@ -1,0 +1,13 @@
+name: OPM Plugin Check
+on:
+  pull_request:
+    branches: [dev]
+  workflow_dispatch:
+
+jobs:
+  opm_check:
+    uses: OpenVoiceOS/gh-automations/.github/workflows/opm-check.yml@dev
+    secrets: inherit
+    with:
+      plugin_type: "skill"
+      entry_point: "ovos-skill-confucius-quotes.openvoiceos"
