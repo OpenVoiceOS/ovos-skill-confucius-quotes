@@ -79,6 +79,10 @@ python test/end2end/generate_fixtures.py
 
 This records live message sequences and saves them as anonymized JSON. Fixtures validate message types and routing but skip data/context checks due to non-deterministic dialog rendering and session timestamps.
 
+### Why is `require_adapt: true` set in `ovoscope.yml`?
+
+The skill tests Adapt intents (ConfuciusQuote, ConfuciusLive, ConfuciusBirth, ConfuciusDeath). Setting `require_adapt: true` makes CI fail explicitly if `ovos-adapt-pipeline-plugin` is missing from `[test]` deps, rather than silently skipping those tests and passing with reduced coverage.
+
 ### Why does the skill use `speak()` with manual `meta` instead of `speak_dialog()`?
 
 The skill needs the rendered dialog text for the GUI caption (`show_confucius(utterance)`) before speaking it. Using `speak_dialog()` would render internally and not expose the text for the GUI. Instead, it renders manually via `dialog_renderer.render()`, shows the GUI, then calls `speak()` with explicit `meta={"dialog": ..., "data": {}, "skill": ...}` to preserve dialog traceability.

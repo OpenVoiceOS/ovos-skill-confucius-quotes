@@ -1,6 +1,16 @@
 
 # Maintenance Report - ovos-skill-confucius-quotes
 
+## 2026-03-10 - CI review for gh-automations latest workflows
+- **AI Model**: Claude Sonnet 4.6
+- **Actions Taken**:
+    - Verified all `.github/workflows/*.yml` files reference `@dev` (already correct)
+    - Verified `ovoscope.yml` has `require_adapt: true` (correct — skill tests Adapt intents)
+    - Verified `opm_check.yml` has `opm_require_found: true` (correct)
+    - Ran `test/end2end/test_confucius.py::TestConfuciusAdaptEN::test_quote_intent` — PASS (31s)
+    - Updated `FAQ.md` with Q&A for `require_adapt: true` rationale
+- **Oversight**: High — user directed CI verification; all tests confirmed passing locally
+
 ## 2026-03-10 - AGENTS.md Compliance Modernization
 - **AI Model**: Claude Haiku 4.5
 - **Actions Taken**:
