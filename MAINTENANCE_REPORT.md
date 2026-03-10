@@ -1,6 +1,15 @@
 
 # Maintenance Report - ovos-skill-confucius-quotes
 
+## 2026-03-10 - Fix M2V test isolation and manifest-message noise
+- **AI Model**: Claude Sonnet 4.6
+- **Actions Taken**:
+  - Added `intent.service.adapt.manifest.get`, `intent.service.adapt.manifest`, `intent.service.padatious.manifest.get`, `intent.service.padatious.manifest` to `EXTRA_IGNORED` — these are emitted by ovos-m2v-pipeline's background sync thread ~3 seconds after startup and can corrupt message-count assertions in early tests
+  - Updated `TestConfuciusM2VEN.setUpClass`: uses `get_minicroft(pipeline_config={"ovos_m2v_pipeline": {"model": _M2V_MULTILINGUAL_MODEL}})` to force the multilingual model regardless of `mycroft.conf`; skips if the multilingual model is not cached locally (to avoid downloading a large model in CI)
+  - Removed previous manual config-check skip (replaced by cache-check skip)
+- **Root cause**: M2V background sync fires `intent.service.adapt.manifest.get` + `.manifest` (request + response) 3 seconds after startup, inflating message counts by 2 for any tests that happen to be running at that moment. Also, the user's `mycroft.conf` had a Portuguese-only M2V model which cannot match English intent names.
+- **Oversight**: Full e2e suite: 20 passed, 2 skipped (M2V — multilingual model not cached locally). All non-M2V tests pass cleanly.
+
 ## 2026-03-10 - Fix German and Spanish who.intent for Padacioso compatibility
 - **AI Model**: Claude Sonnet 4.6
 - **Actions Taken**:

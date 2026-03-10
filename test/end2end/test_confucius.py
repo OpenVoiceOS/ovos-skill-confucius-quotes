@@ -37,8 +37,19 @@ from ovoscope import (
 SKILL_ID = "ovos-skill-confucius-quotes.openvoiceos"
 FIXTURES_DIR = os.path.join(os.path.dirname(__file__), "fixtures")
 
-# ovos.gui.screen.close is not in ovoscope's GUI_IGNORED list
-EXTRA_IGNORED = ["ovos.gui.screen.close"]
+# ovos.gui.screen.close is not in ovoscope's GUI_IGNORED list.
+# intent.service.adapt.manifest.get and intent.service.padatious.manifest.get
+# are emitted by ovos-m2v-pipeline's background intent-sync thread (3-second
+# debounce after startup) and can appear at any point during early tests.
+EXTRA_IGNORED = [
+    "ovos.gui.screen.close",
+    # M2V background intent-sync thread fires these manifest messages
+    # (request + response) 3 seconds after startup, during early tests.
+    "intent.service.adapt.manifest.get",
+    "intent.service.adapt.manifest",
+    "intent.service.padatious.manifest.get",
+    "intent.service.padatious.manifest",
+]
 
 
 def _session(pipeline, lang="en-US", session_id="test-confucius"):
@@ -286,6 +297,22 @@ class TestConfuciusM2VEN(unittest.TestCase):
     Add 'ovos-m2v-pipeline' to [test] deps to enable.
     """
 
+    # The multilingual model covers all OVOS skill intent names regardless of
+    # language; a language-specific model (e.g. Portuguese-only) won't contain
+    # English intent names in its classes_ and will always return no match.
+    _M2V_MULTILINGUAL_MODEL = (
+        "Jarbas/ovos-model2vec-intents-distiluse-base-multilingual-cased-v2"
+    )
+
+    @classmethod
+    def _multilingual_model_cached(cls) -> bool:
+        """Return True if the multilingual model is in the HuggingFace cache."""
+        import os
+        hf_cache = os.path.expanduser("~/.cache/huggingface/hub")
+        repo_dir = cls._M2V_MULTILINGUAL_MODEL.replace("/", "--").replace("/", "--")
+        model_dir = f"models--{cls._M2V_MULTILINGUAL_MODEL.replace('/', '--')}"
+        return os.path.isdir(os.path.join(hf_cache, model_dir))
+
     @classmethod
     def setUpClass(cls):
         if not is_pipeline_available(M2V_PIPELINE):
@@ -293,8 +320,28 @@ class TestConfuciusM2VEN(unittest.TestCase):
                 "ovos-m2v-pipeline not installed — "
                 "add it to [test] deps or install manually"
             )
+        if not cls._multilingual_model_cached():
+            raise unittest.SkipTest(
+                f"Multilingual M2V model not cached locally — "
+                f"run: python -c \"from model2vec.inference import StaticModelPipeline; "
+                f"StaticModelPipeline.from_pretrained('{cls._M2V_MULTILINGUAL_MODEL}')\" "
+                f"to download it"
+            )
         LOG.set_level("WARNING")
-        cls.minicroft = get_minicroft([SKILL_ID])
+        # Force the multilingual model regardless of what mycroft.conf says,
+        # so tests are reproducible even when the user has a language-specific
+        # model configured locally.  pipeline_config patches
+        # Configuration()["intents"]["ovos_m2v_pipeline"] before the M2V
+        # pipeline plugin is instantiated in super().__init__().
+        cls.minicroft = get_minicroft(
+            [SKILL_ID],
+            pipeline_config={"ovos_m2v_pipeline": {"model": cls._M2V_MULTILINGUAL_MODEL}},
+        )
+        # M2V pipeline syncs intents in a background thread with a 3-second
+        # debounce followed by a 5-second query timeout. Wait for the sync to
+        # complete so that self.intents is populated before the first test runs.
+        import time
+        time.sleep(10)
 
     @classmethod
     def tearDownClass(cls):

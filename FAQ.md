@@ -93,6 +93,15 @@ The files were rewritten to use plain text (one variant per line, no parentheses
 
 The skill tests Adapt intents (ConfuciusQuote, ConfuciusLive, ConfuciusBirth, ConfuciusDeath). Setting `require_adapt: true` makes CI fail explicitly if `ovos-adapt-pipeline-plugin` is missing from `[test]` deps, rather than silently skipping those tests and passing with reduced coverage.
 
+### Why do M2V tests skip when the multilingual model is not cached?
+`ovos-m2v-pipeline` classifies utterances using a pre-trained model. A language-specific model (e.g. Portuguese-only) will not contain English intent names and always returns no match. The test forces the multilingual model via `pipeline_config`, but skips if it is not cached locally to avoid downloading a large model. To enable M2V tests locally, download the model once:
+```bash
+python -c "from model2vec.inference import StaticModelPipeline; StaticModelPipeline.from_pretrained('Jarbas/ovos-model2vec-intents-distiluse-base-multilingual-cased-v2')"
+```
+
+### Why are `intent.service.adapt.manifest.*` messages in EXTRA_IGNORED?
+`ovos-m2v-pipeline` runs a background intent-sync thread that fires `intent.service.adapt.manifest.get` and `intent.service.adapt.manifest` (request + response) approximately 3 seconds after startup. These messages appear on the FakeBus and can inflate the captured message count during early tests. Adding them to `EXTRA_IGNORED` filters them out so tests aren't sensitive to M2V's async sync timing.
+
 ### Why does the skill use `speak()` with manual `meta` instead of `speak_dialog()`?
 
 The skill needs the rendered dialog text for the GUI caption (`show_confucius(utterance)`) before speaking it. Using `speak_dialog()` would render internally and not expose the text for the GUI. Instead, it renders manually via `dialog_renderer.render()`, shows the GUI, then calls `speak()` with explicit `meta={"dialog": ..., "data": {}, "skill": ...}` to preserve dialog traceability.
