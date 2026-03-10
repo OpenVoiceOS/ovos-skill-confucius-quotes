@@ -79,6 +79,16 @@ python test/end2end/generate_fixtures.py
 
 This records live message sequences and saves them as anonymized JSON. Fixtures validate message types and routing but skip data/context checks due to non-deterministic dialog rendering and session timestamps.
 
+### Why did the German and Spanish `who.intent` tests fail with Padacioso?
+
+The original `locale/de-de/who.intent` used a regex-like grouping syntax (`(Konfuzius|Confuzius)?`) and `locale/es-es/who.intent` used special punctuation (`¿Quién es Confucio?`). Padatious/Padacioso does not support these formats — it expects one plain utterance per line.
+
+The files were rewritten to use plain text (one variant per line, no parentheses or special punctuation). The `translations/<lang>/intents.json` files were updated to match, and `scripts/sync_translations.py` was run to confirm the locale files regenerate correctly.
+
+### What is the relationship between `translations/` and `locale/`?
+
+`translations/<lang>/*.json` is the **source of truth** — these are the files that gitlocalize-app edits in translation PRs. `scripts/sync_translations.py` reads the JSON files and writes the locale files. When editing intent/dialog/vocab text, always update the JSON files and run the sync script to regenerate locale files. Never edit locale files directly without updating the corresponding JSON.
+
 ### Why is `require_adapt: true` set in `ovoscope.yml`?
 
 The skill tests Adapt intents (ConfuciusQuote, ConfuciusLive, ConfuciusBirth, ConfuciusDeath). Setting `require_adapt: true` makes CI fail explicitly if `ovos-adapt-pipeline-plugin` is missing from `[test]` deps, rather than silently skipping those tests and passing with reduced coverage.

@@ -1,6 +1,17 @@
 
 # Maintenance Report - ovos-skill-confucius-quotes
 
+## 2026-03-10 - Fix German and Spanish who.intent for Padacioso compatibility
+- **AI Model**: Claude Sonnet 4.6
+- **Actions Taken**:
+    - Rewrote `locale/de-de/who.intent`: replaced unsupported `(word|word2)?` regex-like syntax with one plain utterance per line — `locale/de-de/who.intent`
+    - Rewrote `locale/es-es/who.intent`: removed inverted question marks (`¿`, `?`) and expanded to 6 plain utterances — `locale/es-es/who.intent`
+    - Updated `translations/de-de/intents.json` and `translations/es-es/intents.json` to match (source of truth)
+    - Ran `scripts/sync_translations.py` to confirm locale files regenerate correctly from translations JSON
+    - Verified `TestConfuciusMultilingual::test_who_intent_de` and `test_who_intent_es` now pass
+- **Root cause**: Padatious/Padacioso does not support regex-like `(word|word2)?` grouping or special punctuation (`¿`, `?`) in intent files. EN and PT locales used plain text; DE and ES had the old broken format.
+- **Oversight**: High — user flagged translations sync requirement; fix verified by running tests
+
 ## 2026-03-10 - CI review for gh-automations latest workflows
 - **AI Model**: Claude Sonnet 4.6
 - **Actions Taken**:
