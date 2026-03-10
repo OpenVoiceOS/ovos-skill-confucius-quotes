@@ -1,20 +1,21 @@
-name: Coverage Report
+name: Coverage Pages
 on:
-  pull_request:
+  push:
     branches: [dev]
   workflow_dispatch:
 
 permissions:
-  pull-requests: write
   contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  coverage:
+  coverage_pages:
     uses: OpenVoiceOS/gh-automations/.github/workflows/coverage.yml@dev
     secrets: inherit
     with:
       python_version: "3.11"
       system_deps: 'swig'
       coverage_source: "ovos_skill_confucius_quotes"
-      min_coverage: 80
-      pr_comment: true
+      pr_comment: false
+      publish_to_gh_pages: true
