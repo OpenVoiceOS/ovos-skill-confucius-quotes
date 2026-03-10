@@ -1,6 +1,20 @@
-Last Edit: Claude Sonnet 4.6 - 2026-03-10 - Motive: End-to-end test improvements and multilingual testing.
 
 # Maintenance Report - ovos-skill-confucius-quotes
+
+## 2026-03-10 - AGENTS.md Compliance Modernization
+- **AI Model**: Claude Haiku 4.5
+- **Actions Taken**:
+    - Created missing `skill.json` in `locale/pt-pt/`, `locale/es-es/`, `locale/eu/` with translated names/descriptions
+    - Added module docstring and class docstring to `ConfuciusQuotesSkill` — `__init__.py:1,12`
+    - Added type hints to all public methods (`Message` parameter, `-> None` return) — `__init__.py:59-106`
+    - Added comprehensive docstrings to all methods with parameter descriptions — `__init__.py:32-65, 47-50, 60-65, 70-75, 81-86, 92-97, 101-106`
+    - Loosened `ovos-workshop` dependency pin: `<8.1.0` → `>=8.0.0` (no upper bound) — `pyproject.toml:20`
+    - Removed unused `ovos-bus-client` dependency — `pyproject.toml:21` (transitive via workshop)
+    - Updated `docs/index.md` with source code citations (`ClassName.method — __init__.py:LINE`) — `docs/index.md:1-10`
+    - Updated `QUICK_FACTS.md` version: `0.1.14a5` → `0.2.0` — `QUICK_FACTS.md:8`
+    - Rewrote `AUDIT.md` to reflect current compliance state (10/10 AGENTS.md requirements met) — `AUDIT.md` (full rewrite)
+    - Created `SUGGESTIONS.md` with 5 enhancement proposals (dialog validation, GUI guard, adaptive quotes, etc.) — `SUGGESTIONS.md` (new file)
+- **Oversight**: All tests pass; `ovoscope-cli generate-test` verified on confucius-skill; no breaking changes.
 
 ## 2026-03-10 - End-to-End Test Improvements
 - **AI Model**: Claude Sonnet 4.6

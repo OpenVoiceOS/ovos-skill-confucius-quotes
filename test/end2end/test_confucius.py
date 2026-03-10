@@ -1,8 +1,13 @@
 """
 End-to-end tests for ovos-skill-confucius-quotes.
 
-Covers all 5 intent handlers in English, plus language-specific tests
+Covers all 5 intent handlers in English plus language-specific tests
 for pt-pt, de-de, and es-es using MiniCroft's secondary_langs support.
+
+Three engine classes test each Padatious-style intent:
+- TestConfuciusPadatiousEN  — uses PADATIOUS_PIPELINE (C engine, skip if not installed)
+- TestConfuciusPadaciosaEN  — uses PADACIOSO_PIPELINE (pure Python, always available)
+- TestConfuciusM2VEN        — uses M2V_PIPELINE (vector engine, skip if not installed)
 
 Intents:
 - Adapt: ConfuciusQuote  (confucius + quote/say/saying)
@@ -12,13 +17,21 @@ Intents:
 - Padatious: who.intent  ("who is confucius" / "who was confucius")
 """
 import os
-from unittest import TestCase
+import unittest
 
 from ovos_bus_client.message import Message
 from ovos_bus_client.session import Session
 from ovos_utils.log import LOG
 
-from ovoscope import ADAPT_PIPELINE, PADATIOUS_PIPELINE, End2EndTest, get_minicroft
+from ovoscope import (
+    ADAPT_PIPELINE,
+    PADATIOUS_PIPELINE,
+    PADACIOSO_PIPELINE,
+    M2V_PIPELINE,
+    End2EndTest,
+    get_minicroft,
+    is_pipeline_available,
+)
 
 
 SKILL_ID = "ovos-skill-confucius-quotes.openvoiceos"
@@ -79,7 +92,7 @@ def _adapt_expected(utterance, lang, intent_name, handler_name):
 
 
 def _padatious_expected(utterance, lang, handler_name):
-    """Standard Padatious expected message sequence."""
+    """Standard Padatious/Padacioso expected message sequence."""
     dialog = HANDLER_DIALOG[handler_name]
     return [
         Message(f"{SKILL_ID}.activate",
@@ -118,9 +131,9 @@ def _make_adapt_test(minicroft, utterance, intent_name, handler_name, lang="en-U
     )
 
 
-def _make_padatious_test(minicroft, utterance, lang="en-US"):
-    """Build an End2EndTest for the who.intent Padatious intent."""
-    sess = _session(PADATIOUS_PIPELINE, lang=lang)
+def _make_exact_match_test(minicroft, pipeline, utterance, lang="en-US"):
+    """Build an End2EndTest for the who.intent exact-match intent."""
+    sess = _session(pipeline, lang=lang)
     msg = _utterance_msg(utterance, sess)
     return End2EndTest(
         minicroft=minicroft,
@@ -132,11 +145,11 @@ def _make_padatious_test(minicroft, utterance, lang="en-US"):
 
 
 # ──────────────────────────────────────────────────────────────────────
-# English tests — all 5 intents with alternative phrasings
+# English tests — all 5 Adapt intents
 # ──────────────────────────────────────────────────────────────────────
 
 
-class TestConfuciusAdaptEN(TestCase):
+class TestConfuciusAdaptEN(unittest.TestCase):
     """Adapt intents in en-US."""
 
     @classmethod
@@ -199,8 +212,13 @@ class TestConfuciusAdaptEN(TestCase):
         test.execute(timeout=10)
 
 
-class TestConfuciusPadatiousEN(TestCase):
-    """Padatious intents in en-US."""
+# ──────────────────────────────────────────────────────────────────────
+# who.intent — Padacioso (pure Python, always available)
+# ──────────────────────────────────────────────────────────────────────
+
+
+class TestConfuciusPadaciosaEN(unittest.TestCase):
+    """who.intent via Padacioso (pure Python engine, no swig required)."""
 
     @classmethod
     def setUpClass(cls):
@@ -212,11 +230,83 @@ class TestConfuciusPadatiousEN(TestCase):
         cls.minicroft.stop()
 
     def test_who_intent(self):
-        test = _make_padatious_test(self.minicroft, "who is confucius")
+        test = _make_exact_match_test(self.minicroft, PADACIOSO_PIPELINE, "who is confucius")
         test.execute(timeout=10)
 
     def test_who_intent_past_tense(self):
-        test = _make_padatious_test(self.minicroft, "who was confucius")
+        test = _make_exact_match_test(self.minicroft, PADACIOSO_PIPELINE, "who was confucius")
+        test.execute(timeout=10)
+
+
+# ──────────────────────────────────────────────────────────────────────
+# who.intent — Padatious (C extension engine, optional)
+# ──────────────────────────────────────────────────────────────────────
+
+
+class TestConfuciusPadatiousEN(unittest.TestCase):
+    """who.intent via Padatious (C extension engine).
+
+    Skipped when ovos-padatious-pipeline-plugin is not installed.
+    Add 'ovos-padatious-pipeline-plugin' to [test] deps to enable.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        if not is_pipeline_available(PADATIOUS_PIPELINE):
+            raise unittest.SkipTest(
+                "ovos-padatious-pipeline-plugin not installed — "
+                "add it to [test] deps or install manually"
+            )
+        LOG.set_level("WARNING")
+        cls.minicroft = get_minicroft([SKILL_ID])
+
+    @classmethod
+    def tearDownClass(cls):
+        if hasattr(cls, "minicroft"):
+            cls.minicroft.stop()
+
+    def test_who_intent(self):
+        test = _make_exact_match_test(self.minicroft, PADATIOUS_PIPELINE, "who is confucius")
+        test.execute(timeout=10)
+
+    def test_who_intent_past_tense(self):
+        test = _make_exact_match_test(self.minicroft, PADATIOUS_PIPELINE, "who was confucius")
+        test.execute(timeout=10)
+
+
+# ──────────────────────────────────────────────────────────────────────
+# who.intent — M2V vector pipeline (optional)
+# ──────────────────────────────────────────────────────────────────────
+
+
+class TestConfuciusM2VEN(unittest.TestCase):
+    """who.intent via Model2Vec vector pipeline (optional).
+
+    Skipped when ovos-m2v-pipeline is not installed.
+    Add 'ovos-m2v-pipeline' to [test] deps to enable.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        if not is_pipeline_available(M2V_PIPELINE):
+            raise unittest.SkipTest(
+                "ovos-m2v-pipeline not installed — "
+                "add it to [test] deps or install manually"
+            )
+        LOG.set_level("WARNING")
+        cls.minicroft = get_minicroft([SKILL_ID])
+
+    @classmethod
+    def tearDownClass(cls):
+        if hasattr(cls, "minicroft"):
+            cls.minicroft.stop()
+
+    def test_who_intent(self):
+        test = _make_exact_match_test(self.minicroft, M2V_PIPELINE, "who is confucius")
+        test.execute(timeout=10)
+
+    def test_who_intent_past_tense(self):
+        test = _make_exact_match_test(self.minicroft, M2V_PIPELINE, "who was confucius")
         test.execute(timeout=10)
 
 
@@ -225,11 +315,12 @@ class TestConfuciusPadatiousEN(TestCase):
 # ──────────────────────────────────────────────────────────────────────
 
 
-class TestConfuciusMultilingual(TestCase):
-    """Adapt + Padatious intents in pt-PT, de-DE, and es-ES.
+class TestConfuciusMultilingual(unittest.TestCase):
+    """Adapt + exact-match intents in pt-PT, de-DE, and es-ES.
 
     Uses MiniCroft's secondary_langs parameter to register vocab
     for all target languages at startup.
+    Uses Padacioso for exact-match intents (always available).
     """
 
     @classmethod
@@ -255,9 +346,8 @@ class TestConfuciusMultilingual(TestCase):
         test.execute(timeout=10)
 
     def test_who_intent_pt(self):
-        test = _make_padatious_test(self.minicroft,
-                                    "quem é confúcio",
-                                    lang="pt-PT")
+        test = _make_exact_match_test(self.minicroft, PADACIOSO_PIPELINE,
+                                      "quem é confúcio", lang="pt-PT")
         test.execute(timeout=10)
 
     # --- German (de-DE) ---
@@ -271,9 +361,8 @@ class TestConfuciusMultilingual(TestCase):
         test.execute(timeout=10)
 
     def test_who_intent_de(self):
-        test = _make_padatious_test(self.minicroft,
-                                    "Wer ist Konfuzius",
-                                    lang="de-DE")
+        test = _make_exact_match_test(self.minicroft, PADACIOSO_PIPELINE,
+                                      "Wer ist Konfuzius", lang="de-DE")
         test.execute(timeout=10)
 
     # --- Spanish (es-ES) ---
@@ -287,9 +376,8 @@ class TestConfuciusMultilingual(TestCase):
         test.execute(timeout=10)
 
     def test_who_intent_es(self):
-        test = _make_padatious_test(self.minicroft,
-                                    "Quién es Confucio",
-                                    lang="es-ES")
+        test = _make_exact_match_test(self.minicroft, PADACIOSO_PIPELINE,
+                                      "Quién es Confucio", lang="es-ES")
         test.execute(timeout=10)
 
 
@@ -298,7 +386,7 @@ class TestConfuciusMultilingual(TestCase):
 # ──────────────────────────────────────────────────────────────────────
 
 
-class TestConfuciusFixtures(TestCase):
+class TestConfuciusFixtures(unittest.TestCase):
     """Replay tests from pre-recorded JSON fixtures.
 
     Fixtures are generated by running:

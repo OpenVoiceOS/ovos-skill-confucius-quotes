@@ -9,5 +9,5 @@ jobs:
     uses: OpenVoiceOS/gh-automations/.github/workflows/ovoscope.yml@dev
     secrets: inherit
     with:
-      system_deps: 'swig'
       test_path: "test/end2end/"
+      require_adapt: true

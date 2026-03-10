@@ -23,7 +23,8 @@ dynamic = ["version"]
 
 [project.optional-dependencies]
 test = [
-    "ovoscope"
+    "ovoscope",
+    "ovos-adapt-pipeline-plugin"
 ]
 
 
