@@ -1,6 +1,18 @@
-Last Edit: Claude Sonnet 4.6 - 2026-03-09 - Motive: Full CI modernization — standardized all 13 workflow files.
+Last Edit: Claude Sonnet 4.6 - 2026-03-10 - Motive: End-to-end test improvements and multilingual testing.
 
 # Maintenance Report - ovos-skill-confucius-quotes
+
+## 2026-03-10 - End-to-End Test Improvements
+- **AI Model**: Claude Sonnet 4.6
+- **Actions Taken**:
+    - Rewrote `test/end2end/test_confucius.py`: 4 → 18 tests (9 EN + 6 multilingual + 3 fixture)
+    - Added missing `ConfuciusLive` intent test and alternative utterance phrasings
+    - Added multilingual tests (pt-PT, de-DE, es-ES) using ovoscope `secondary_langs`
+    - Added JSON fixture recording (`generate_fixtures.py`) and replay tests (Pattern 4)
+    - Refactored `__init__.py`: extracted `_speak_and_show()` helper, added `meta` with `dialog` key to `speak()` calls for dialog traceability
+    - Fixed ovoscope bugs: `from_message` crashed with `async_messages=None`, `from_message` didn't filter GUI messages, `from_message` didn't pass `ignore_messages`/`eof_msgs` to returned test
+    - Extended ovoscope: added `lang` and `secondary_langs` params to `MiniCroft` for multilingual vocab registration, added `ignore_gui` param to `from_message`
+- **Oversight**: All 18 e2e tests + 5 unit tests pass. Multilingual tests validate Adapt + Padatious in 3 non-English languages.
 
 ## 2026-03-09 - Full CI Modernization
 - **AI Model**: Claude Sonnet 4.6

@@ -15,37 +15,29 @@ class ConfuciusQuotesSkill(OVOSSkill):
                             override_animations=True,
                             fill='PreserveAspectFit')
 
+    def _speak_and_show(self, dialog):
+        utterance = self.dialog_renderer.render(dialog, {})
+        self.show_confucius(utterance)
+        self.speak(utterance, wait=True,
+                   meta={"dialog": dialog, "data": {}, "skill": self.skill_id})
+        self.gui.release()
+
     @intent_handler(IntentBuilder("ConfuciusQuote").require('confucius').require('quote'))
     def handle_quote(self, message):
-        utterance = self.dialog_renderer.render("quote", {})
-        self.show_confucius(utterance)
-        self.speak(utterance, wait=True)
-        self.gui.release()
+        self._speak_and_show("quote")
 
     @intent_handler(IntentBuilder("ConfuciusLive").require('confucius').require('when').require('live'))
     def handle_live(self, message):
-        utterance = self.dialog_renderer.render("live", {})
-        self.show_confucius(utterance)
-        self.speak(utterance, wait=True)
-        self.gui.release()
+        self._speak_and_show("live")
 
     @intent_handler(IntentBuilder("ConfuciusBirth").require('confucius').require('birth'))
     def handle_birth(self, message):
-        utterance = self.dialog_renderer.render("birth", {})
-        self.show_confucius(utterance)
-        self.speak(utterance, wait=True)
-        self.gui.release()
+        self._speak_and_show("birth")
 
     @intent_handler(IntentBuilder("ConfuciusDeath").require('confucius').require('death'))
     def handle_death(self, message):
-        utterance = self.dialog_renderer.render("death", {})
-        self.show_confucius(utterance)
-        self.speak(utterance, wait=True)
-        self.gui.release()
+        self._speak_and_show("death")
 
     @intent_handler("who.intent")
     def handle_who(self, message):
-        utterance = self.dialog_renderer.render("confucius", {})
-        self.show_confucius(utterance)
-        self.speak(utterance, wait=True)
-        self.gui.release()
+        self._speak_and_show("confucius")
