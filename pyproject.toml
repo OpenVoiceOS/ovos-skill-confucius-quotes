@@ -21,10 +21,6 @@ dependencies = [
 ]
 dynamic = ["version"]
 
-[project.optional-dependencies]
-test = [
-    "ovoscope>=0.7.0"
-]
 
 [project.urls]
 Homepage = "https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes"

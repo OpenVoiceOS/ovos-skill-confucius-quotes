@@ -13,6 +13,5 @@ jobs:
       system_deps: 'swig'
       coverage_source: "ovos_skill_confucius_quotes"
       min_coverage: 80
-      install_extras: ".[test]"
       pr_comment: true
       publish_to_gh_pages: false
