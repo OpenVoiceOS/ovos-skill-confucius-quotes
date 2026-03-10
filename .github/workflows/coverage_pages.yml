@@ -5,17 +5,13 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 jobs:
   coverage_pages:
-    uses: OpenVoiceOS/gh-automations/.github/workflows/coverage.yml@dev
+    uses: OpenVoiceOS/gh-automations/.github/workflows/coverage-pages.yml@dev
     secrets: inherit
     with:
       python_version: "3.11"
       system_deps: 'swig'
       coverage_source: "ovos_skill_confucius_quotes"
-      pr_comment: false
-      publish_to_gh_pages: true
