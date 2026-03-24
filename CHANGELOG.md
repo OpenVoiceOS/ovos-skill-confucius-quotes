@@ -1,58 +1,12 @@
 # Changelog
 
-## [0.2.0a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.2.0a1) (2026-03-09)
+## [0.2.1a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.2.1a1) (2026-03-24)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.14a5...0.2.0a1)
-
-**Merged pull requests:**
-
-- feat: new automations [\#46](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/46) ([JarbasAl](https://github.com/JarbasAl))
-- Add fr-fr locale [\#45](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/45) ([goldyfruit](https://github.com/goldyfruit))
-
-## [0.1.14a5](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.14a5) (2026-01-19)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.14a4...0.1.14a5)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.2.0...0.2.1a1)
 
 **Merged pull requests:**
 
-- ca-es/translate [\#44](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/44) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
-- chore\(deps\): update actions/checkout action to v6 [\#36](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/36) ([renovate[bot]](https://github.com/apps/renovate))
-
-## [0.1.14a4](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.14a4) (2025-12-20)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.14a3...0.1.14a4)
-
-**Merged pull requests:**
-
-- chore\(deps\): update dependency ovos-workshop to v8 [\#42](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/42) ([renovate[bot]](https://github.com/apps/renovate))
-
-## [0.1.14a3](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.14a3) (2025-12-19)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.14a2...0.1.14a3)
-
-**Merged pull requests:**
-
-- chore\(deps\): update dependency python to 3.14 [\#35](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/35) ([renovate[bot]](https://github.com/apps/renovate))
-
-## [0.1.14a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.14a2) (2025-12-19)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.14a1...0.1.14a2)
-
-**Merged pull requests:**
-
-- chore\(deps\): update actions/setup-python action to v6 [\#39](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/39) ([renovate[bot]](https://github.com/apps/renovate))
-
-## [0.1.14a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.1.14a1) (2025-12-18)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/V0.1.13...0.1.14a1)
-
-**Merged pull requests:**
-
-- chore: Configure Renovate [\#34](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/34) ([renovate[bot]](https://github.com/apps/renovate))
-
-## [V0.1.13](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/V0.1.13) (2025-06-08)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.1.13...V0.1.13)
+- fix: rename bare lang code locale directories [\#49](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/49) ([ovos-localize[bot]](https://github.com/apps/ovos-localize))
 
 
 
