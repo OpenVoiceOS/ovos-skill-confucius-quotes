@@ -1,0 +1,13 @@
+name: Skill Tests (ovoscope)
+on:
+  pull_request:
+    branches: [dev]
+  workflow_dispatch:
+
+jobs:
+  ovoscope:
+    uses: OpenVoiceOS/gh-automations/.github/workflows/ovoscope.yml@dev
+    secrets: inherit
+    with:
+      test_path: "test/end2end/"
+      require_adapt: true

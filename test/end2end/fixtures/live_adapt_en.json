@@ -1,0 +1,603 @@
+{
+  "skill_ids": [
+    "ovos-skill-confucius-quotes.openvoiceos"
+  ],
+  "source_message": [
+    {
+      "type": "recognizer_loop:utterance",
+      "data": {
+        "utterances": [
+          "when did confucius live"
+        ],
+        "lang": "en-US"
+      },
+      "context": {
+        "session": {
+          "active_skills": [],
+          "utterance_states": {},
+          "session_id": "fixture-recording",
+          "persona_id": null,
+          "lang": "en-US",
+          "context": {
+            "timeout": 120,
+            "frame_stack": []
+          },
+          "site_id": "unknown",
+          "pipeline": [
+            "ovos-adapt-pipeline-plugin-high",
+            "ovos-adapt-pipeline-plugin-medium",
+            "ovos-adapt-pipeline-plugin-low"
+          ],
+          "location": {
+            "city": {
+              "code": "N/A",
+              "name": "N/A",
+              "state": {
+                "code": "N/A",
+                "name": "N/A",
+                "country": {
+                  "code": "N/A",
+                  "name": "N/A"
+                }
+              }
+            },
+            "coordinate": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "timezone": {
+              "code": "Europe/Lisbon",
+              "name": "Europe/Lisbon"
+            }
+          },
+          "system_unit": "imperial",
+          "time_format": "half",
+          "date_format": "MDY",
+          "is_speaking": false,
+          "is_recording": false,
+          "blacklisted_skills": [
+            "skill-ovos-stop.openvoiceos"
+          ],
+          "blacklisted_intents": []
+        },
+        "source": "A",
+        "destination": "B"
+      }
+    }
+  ],
+  "expected_messages": [
+    {
+      "type": "recognizer_loop:utterance",
+      "data": {
+        "utterances": [
+          "when did confucius live"
+        ],
+        "lang": "en-US"
+      },
+      "context": {
+        "session": {
+          "active_skills": [],
+          "utterance_states": {},
+          "session_id": "fixture-recording",
+          "persona_id": null,
+          "lang": "en-US",
+          "context": {
+            "timeout": 120,
+            "frame_stack": []
+          },
+          "site_id": "unknown",
+          "pipeline": [
+            "ovos-adapt-pipeline-plugin-high",
+            "ovos-adapt-pipeline-plugin-medium",
+            "ovos-adapt-pipeline-plugin-low"
+          ],
+          "location": {
+            "city": {
+              "code": "N/A",
+              "name": "N/A",
+              "state": {
+                "code": "N/A",
+                "name": "N/A",
+                "country": {
+                  "code": "N/A",
+                  "name": "N/A"
+                }
+              }
+            },
+            "coordinate": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "timezone": {
+              "code": "Europe/Lisbon",
+              "name": "Europe/Lisbon"
+            }
+          },
+          "system_unit": "imperial",
+          "time_format": "half",
+          "date_format": "MDY",
+          "is_speaking": false,
+          "is_recording": false,
+          "blacklisted_skills": [
+            "skill-ovos-stop.openvoiceos"
+          ],
+          "blacklisted_intents": []
+        },
+        "source": "A",
+        "destination": "B"
+      }
+    },
+    {
+      "type": "ovos-skill-confucius-quotes.openvoiceos.activate",
+      "data": {},
+      "context": {
+        "session": {
+          "active_skills": [],
+          "utterance_states": {},
+          "session_id": "fixture-recording",
+          "persona_id": null,
+          "lang": "en-US",
+          "context": {
+            "timeout": 120,
+            "frame_stack": []
+          },
+          "site_id": "unknown",
+          "pipeline": [
+            "ovos-adapt-pipeline-plugin-high",
+            "ovos-adapt-pipeline-plugin-medium",
+            "ovos-adapt-pipeline-plugin-low"
+          ],
+          "location": {
+            "city": {
+              "code": "N/A",
+              "name": "N/A",
+              "state": {
+                "code": "N/A",
+                "name": "N/A",
+                "country": {
+                  "code": "N/A",
+                  "name": "N/A"
+                }
+              }
+            },
+            "coordinate": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "timezone": {
+              "code": "Europe/Lisbon",
+              "name": "Europe/Lisbon"
+            }
+          },
+          "system_unit": "imperial",
+          "time_format": "half",
+          "date_format": "MDY",
+          "is_speaking": false,
+          "is_recording": false,
+          "blacklisted_skills": [
+            "skill-ovos-stop.openvoiceos"
+          ],
+          "blacklisted_intents": []
+        },
+        "source": "B",
+        "destination": "A",
+        "lang": "en-US",
+        "skill_id": "ovos-skill-confucius-quotes.openvoiceos"
+      }
+    },
+    {
+      "type": "ovos-skill-confucius-quotes.openvoiceos:ConfuciusLive",
+      "data": {
+        "utterances": [
+          "when did confucius live"
+        ],
+        "lang": "en-US",
+        "intent_type": "ovos-skill-confucius-quotes.openvoiceos:ConfuciusLive",
+        "ovos_skill_confucius_quotes_openvoiceosconfucius": "confucius",
+        "ovos_skill_confucius_quotes_openvoiceoswhen": "when",
+        "ovos_skill_confucius_quotes_openvoiceoslive": "live",
+        "target": null,
+        "confidence": 0.7391304347826088,
+        "__tags__": [
+          {
+            "match": "confucius",
+            "key": "confucius",
+            "start_token": 2,
+            "entities": [
+              {
+                "key": "confucius",
+                "match": "confucius",
+                "data": [
+                  [
+                    "confucius",
+                    "ovos_skill_confucius_quotes_openvoiceosConfucius"
+                  ]
+                ],
+                "confidence": 1.0
+              }
+            ],
+            "end_token": 2,
+            "from_context": false
+          },
+          {
+            "match": "when",
+            "key": "when",
+            "start_token": 0,
+            "entities": [
+              {
+                "key": "when",
+                "match": "when",
+                "data": [
+                  [
+                    "when",
+                    "common_query_openvoiceosQuestionword"
+                  ],
+                  [
+                    "when",
+                    "ovos_skill_confucius_quotes_openvoiceosWhen"
+                  ]
+                ],
+                "confidence": 1.0
+              }
+            ],
+            "end_token": 0,
+            "from_context": false
+          },
+          {
+            "match": "live",
+            "key": "live",
+            "start_token": 3,
+            "entities": [
+              {
+                "key": "live",
+                "match": "live",
+                "data": [
+                  [
+                    "live",
+                    "ovos_skill_confucius_quotes_openvoiceosLive"
+                  ]
+                ],
+                "confidence": 1.0
+              }
+            ],
+            "end_token": 3,
+            "from_context": false
+          }
+        ],
+        "utterance": "when did confucius live"
+      },
+      "context": {
+        "session": {
+          "active_skills": [
+            [
+              "ovos-skill-confucius-quotes.openvoiceos",
+              1773098914.375383
+            ]
+          ],
+          "utterance_states": {},
+          "session_id": "fixture-recording",
+          "persona_id": null,
+          "lang": "en-US",
+          "context": {
+            "timeout": 120,
+            "frame_stack": []
+          },
+          "site_id": "unknown",
+          "pipeline": [
+            "ovos-adapt-pipeline-plugin-high",
+            "ovos-adapt-pipeline-plugin-medium",
+            "ovos-adapt-pipeline-plugin-low"
+          ],
+          "location": {
+            "city": {
+              "code": "N/A",
+              "name": "N/A",
+              "state": {
+                "code": "N/A",
+                "name": "N/A",
+                "country": {
+                  "code": "N/A",
+                  "name": "N/A"
+                }
+              }
+            },
+            "coordinate": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "timezone": {
+              "code": "Europe/Lisbon",
+              "name": "Europe/Lisbon"
+            }
+          },
+          "system_unit": "imperial",
+          "time_format": "half",
+          "date_format": "MDY",
+          "is_speaking": false,
+          "is_recording": false,
+          "blacklisted_skills": [
+            "skill-ovos-stop.openvoiceos"
+          ],
+          "blacklisted_intents": []
+        },
+        "source": "B",
+        "destination": "A",
+        "lang": "en-US",
+        "skill_id": "ovos-skill-confucius-quotes.openvoiceos"
+      }
+    },
+    {
+      "type": "mycroft.skill.handler.start",
+      "data": {
+        "name": "ConfuciusQuotesSkill.handle_live"
+      },
+      "context": {
+        "session": {
+          "active_skills": [
+            [
+              "ovos-skill-confucius-quotes.openvoiceos",
+              1773098914.375383
+            ]
+          ],
+          "utterance_states": {},
+          "session_id": "fixture-recording",
+          "persona_id": null,
+          "lang": "en-US",
+          "context": {
+            "timeout": 120,
+            "frame_stack": []
+          },
+          "site_id": "unknown",
+          "pipeline": [
+            "ovos-adapt-pipeline-plugin-high",
+            "ovos-adapt-pipeline-plugin-medium",
+            "ovos-adapt-pipeline-plugin-low"
+          ],
+          "location": {
+            "city": {
+              "code": "N/A",
+              "name": "N/A",
+              "state": {
+                "code": "N/A",
+                "name": "N/A",
+                "country": {
+                  "code": "N/A",
+                  "name": "N/A"
+                }
+              }
+            },
+            "coordinate": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "timezone": {
+              "code": "Europe/Lisbon",
+              "name": "Europe/Lisbon"
+            }
+          },
+          "system_unit": "imperial",
+          "time_format": "half",
+          "date_format": "MDY",
+          "is_speaking": false,
+          "is_recording": false,
+          "blacklisted_skills": [
+            "skill-ovos-stop.openvoiceos"
+          ],
+          "blacklisted_intents": []
+        },
+        "source": "B",
+        "destination": "A",
+        "lang": "en-US",
+        "skill_id": "ovos-skill-confucius-quotes.openvoiceos"
+      }
+    },
+    {
+      "type": "speak",
+      "data": {
+        "utterance": "Confucius lived between 551 BC and 479 BC",
+        "expect_response": false,
+        "meta": {
+          "skill": "ovos-skill-confucius-quotes.openvoiceos"
+        },
+        "lang": "en-US"
+      },
+      "context": {
+        "session": {
+          "active_skills": [
+            [
+              "ovos-skill-confucius-quotes.openvoiceos",
+              1773098914.375383
+            ]
+          ],
+          "utterance_states": {},
+          "session_id": "fixture-recording",
+          "persona_id": null,
+          "lang": "en-US",
+          "context": {
+            "timeout": 120,
+            "frame_stack": []
+          },
+          "site_id": "unknown",
+          "pipeline": [
+            "ovos-adapt-pipeline-plugin-high",
+            "ovos-adapt-pipeline-plugin-medium",
+            "ovos-adapt-pipeline-plugin-low"
+          ],
+          "location": {
+            "city": {
+              "code": "N/A",
+              "name": "N/A",
+              "state": {
+                "code": "N/A",
+                "name": "N/A",
+                "country": {
+                  "code": "N/A",
+                  "name": "N/A"
+                }
+              }
+            },
+            "coordinate": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "timezone": {
+              "code": "Europe/Lisbon",
+              "name": "Europe/Lisbon"
+            }
+          },
+          "system_unit": "imperial",
+          "time_format": "half",
+          "date_format": "MDY",
+          "is_speaking": false,
+          "is_recording": false,
+          "blacklisted_skills": [
+            "skill-ovos-stop.openvoiceos"
+          ],
+          "blacklisted_intents": []
+        },
+        "source": "B",
+        "destination": "A",
+        "lang": "en-US",
+        "skill_id": "ovos-skill-confucius-quotes.openvoiceos"
+      }
+    },
+    {
+      "type": "mycroft.skill.handler.complete",
+      "data": {
+        "name": "ConfuciusQuotesSkill.handle_live"
+      },
+      "context": {
+        "session": {
+          "active_skills": [
+            [
+              "ovos-skill-confucius-quotes.openvoiceos",
+              1773098914.375383
+            ]
+          ],
+          "utterance_states": {},
+          "session_id": "fixture-recording",
+          "persona_id": null,
+          "lang": "en-US",
+          "context": {
+            "timeout": 120,
+            "frame_stack": []
+          },
+          "site_id": "unknown",
+          "pipeline": [
+            "ovos-adapt-pipeline-plugin-high",
+            "ovos-adapt-pipeline-plugin-medium",
+            "ovos-adapt-pipeline-plugin-low"
+          ],
+          "location": {
+            "city": {
+              "code": "N/A",
+              "name": "N/A",
+              "state": {
+                "code": "N/A",
+                "name": "N/A",
+                "country": {
+                  "code": "N/A",
+                  "name": "N/A"
+                }
+              }
+            },
+            "coordinate": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "timezone": {
+              "code": "Europe/Lisbon",
+              "name": "Europe/Lisbon"
+            }
+          },
+          "system_unit": "imperial",
+          "time_format": "half",
+          "date_format": "MDY",
+          "is_speaking": false,
+          "is_recording": false,
+          "blacklisted_skills": [
+            "skill-ovos-stop.openvoiceos"
+          ],
+          "blacklisted_intents": []
+        },
+        "source": "B",
+        "destination": "A",
+        "lang": "en-US",
+        "skill_id": "ovos-skill-confucius-quotes.openvoiceos"
+      }
+    },
+    {
+      "type": "ovos.utterance.handled",
+      "data": {
+        "name": "ConfuciusQuotesSkill.handle_live"
+      },
+      "context": {
+        "session": {
+          "active_skills": [
+            [
+              "ovos-skill-confucius-quotes.openvoiceos",
+              1773098914.375383
+            ]
+          ],
+          "utterance_states": {},
+          "session_id": "fixture-recording",
+          "persona_id": null,
+          "lang": "en-US",
+          "context": {
+            "timeout": 120,
+            "frame_stack": []
+          },
+          "site_id": "unknown",
+          "pipeline": [
+            "ovos-adapt-pipeline-plugin-high",
+            "ovos-adapt-pipeline-plugin-medium",
+            "ovos-adapt-pipeline-plugin-low"
+          ],
+          "location": {
+            "city": {
+              "code": "N/A",
+              "name": "N/A",
+              "state": {
+                "code": "N/A",
+                "name": "N/A",
+                "country": {
+                  "code": "N/A",
+                  "name": "N/A"
+                }
+              }
+            },
+            "coordinate": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "timezone": {
+              "code": "Europe/Lisbon",
+              "name": "Europe/Lisbon"
+            }
+          },
+          "system_unit": "imperial",
+          "time_format": "half",
+          "date_format": "MDY",
+          "is_speaking": false,
+          "is_recording": false,
+          "blacklisted_skills": [
+            "skill-ovos-stop.openvoiceos"
+          ],
+          "blacklisted_intents": []
+        },
+        "source": "B",
+        "destination": "A",
+        "lang": "en-US",
+        "skill_id": "ovos-skill-confucius-quotes.openvoiceos"
+      }
+    }
+  ],
+  "eof_msgs": [
+    "ovos.utterance.handled"
+  ],
+  "flip_points": [],
+  "test_msg_type": true,
+  "test_msg_data": true,
+  "test_msg_context": true,
+  "test_routing": true
+}

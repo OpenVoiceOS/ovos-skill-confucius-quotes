@@ -1,6 +1,10 @@
 {
   "who.intent": [
-    "Wer ist (Konfuzius|Confuzius)?\nWas kannst Du mir über (Konfuzius|Confuzius) sagen?\nBitte gib mir Informationen über (Konfuzius|Confuzius)\n",
-    "Wer war (Konfuzius|Confuzius)?"
+    "wer ist Konfuzius",
+    "wer war Konfuzius",
+    "wer ist Confuzius",
+    "wer war Confuzius",
+    "was kannst du mir über Konfuzius sagen",
+    "bitte gib mir Informationen über Konfuzius"
   ]
 }

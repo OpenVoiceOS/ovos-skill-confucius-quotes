@@ -17,10 +17,16 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "ovos-workshop>=8.0.0,<8.1.0",
-    "ovos-bus-client>=1.0.1"
+    "ovos-workshop>=8.0.0"
 ]
 dynamic = ["version"]
+
+[project.optional-dependencies]
+test = [
+    "ovoscope",
+    "ovos-adapt-pipeline-plugin"
+]
+
 
 [project.urls]
 Homepage = "https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes"
@@ -37,3 +43,6 @@ packages = ["ovos_skill_confucius_quotes"]
 
 [tool.setuptools.dynamic]
 version = { attr = "version.__version__" }
+
+[tool.ovos.build]
+system-dependencies = ["swig"]

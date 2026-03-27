@@ -1,12 +1,13 @@
+
 # 🎙️ Confucius Quotes Skill
 
 Bring the wisdom of Ancient China to your OpenVoiceOS device! This skill provides biographical information and a collection of inspiring quotes from the philosopher Confucius.
 
 ## ✨ Features
-- **Wisdom on Demand**: Ask for a random quote from Confucius to inspire your day.
-- **Biographical Facts**: Learn about Confucius's life, including when he was born, when he died, and where he lived.
-- **Visual Experience**: On devices with screens, enjoy a classic portrait of Confucius alongside the spoken text.
-- **Multilingual**: Fully translated into several languages, including English, Portuguese, German, Danish, Spanish, Basque, and Catalan.
+- **Wisdom on Demand**: Ask for a random quote from Confucius to inspire your day via `ConfuciusQuotesSkill.handle_quote` — `__init__.py:62`.
+- **Biographical Facts**: Learn about Confucius's life, including when he was born, when he died, and where he lived via handler methods — `__init__.py:72,82,92,102`.
+- **Visual Experience**: On devices with screens, enjoy a classic portrait of Confucius alongside the spoken text via `ConfuciusQuotesSkill.show_confucius` — `__init__.py:35`.
+- **Multilingual**: Fully translated into several languages, including English, Portuguese, German, Danish, Spanish, Basque, and Catalan via `locale/**` directories.
 
 ## 🚀 Installation
 The easiest way to install this skill is via pip:
