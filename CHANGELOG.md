@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.2.2a1) (2026-04-03)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.2.1a1...0.2.2a1)
+
+**Merged pull requests:**
+
+- fix\(i18n\): normalize locale folders to canonical BCP-47 [\#51](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/51) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.2.1a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.2.1a1) (2026-03-24)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.2.0...0.2.1a1)
