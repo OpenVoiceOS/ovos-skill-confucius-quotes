@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2a3](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.2.2a3) (2026-04-09)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.2.2a2...0.2.2a3)
+
+**Merged pull requests:**
+
+- chore\(ovos-skill-confucius-quotes\): allow ovos-workshop\<9.0.0 [\#55](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/55) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.2.2a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.2.2a2) (2026-04-04)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.2.2a1...0.2.2a2)
