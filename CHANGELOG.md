@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.3.0a1) (2026-07-03)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.2.2a3...0.3.0a1)
+
+**Merged pull requests:**
+
+- feat\(en-US\): tighten confucius-anchored intent definitions [\#58](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/58) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.2.2a3](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.2.2a3) (2026-04-09)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.2.2a2...0.2.2a3)
