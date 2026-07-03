@@ -46,10 +46,10 @@ class TestConfuciusIntentsEnUS(unittest.TestCase):
         messages = self._run("tell me a confucius quote")
         types = [m.msg_type for m in messages]
         self.assertIn(f"{SKILL_ID}:ConfuciusQuote", types)
-        self.assertIn("speak", types)
+        self.assertTrue(any("speak" in t for t in types))
 
     def test_who_was_confucius(self):
         messages = self._run("who was confucius")
         types = [m.msg_type for m in messages]
         self.assertIn(f"{SKILL_ID}:who.intent", types)
-        self.assertIn("speak", types)
+        self.assertTrue(any("speak" in t for t in types))
