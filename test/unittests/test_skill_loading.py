@@ -11,7 +11,7 @@ class TestSkillLoading(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.skill_id = "ovos-skill-confucius-quotes.openvoiceos"
-        self.path = dirname(dirname(__file__))
+        self.path = dirname(dirname(dirname(__file__)))
 
     def test_from_class(self):
         bus = FakeBus()
