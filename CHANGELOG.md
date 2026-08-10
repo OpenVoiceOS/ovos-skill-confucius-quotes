@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.4.0a1) (2026-08-10)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.3.1a2...0.4.0a1)
+
+**Merged pull requests:**
+
+- feat: add ovoscope end2end intent-routing tests [\#57](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/57) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.3.1a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.3.1a2) (2026-08-01)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.3.1a1...0.3.1a2)
