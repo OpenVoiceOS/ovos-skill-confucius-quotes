@@ -52,7 +52,7 @@ class TestConfuciusIntentsEnUS(unittest.TestCase):
         self._assert_intent("tell me a confucius quote", "ConfuciusQuote")
 
     def test_who_was_confucius(self):
-        self._assert_intent("who was confucius", "who.intent")
+        self._assert_intent("who was confucius", "who")
 
     def test_when_did_confucius_live(self):
         self._assert_intent("when did confucius live", "ConfuciusLive")
