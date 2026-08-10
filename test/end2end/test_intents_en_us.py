@@ -42,14 +42,23 @@ class TestConfuciusIntentsEnUS(unittest.TestCase):
         capture.capture(utterance, timeout=30)
         return capture.finish()
 
-    def test_confucius_quote(self):
-        messages = self._run("tell me a confucius quote")
+    def _assert_intent(self, text, intent):
+        messages = self._run(text)
         types = [m.msg_type for m in messages]
-        self.assertIn(f"{SKILL_ID}:ConfuciusQuote", types)
+        self.assertIn(f"{SKILL_ID}:{intent}", types)
         self.assertTrue(any("speak" in t for t in types))
 
+    def test_confucius_quote(self):
+        self._assert_intent("tell me a confucius quote", "ConfuciusQuote")
+
     def test_who_was_confucius(self):
-        messages = self._run("who was confucius")
-        types = [m.msg_type for m in messages]
-        self.assertIn(f"{SKILL_ID}:who.intent", types)
-        self.assertTrue(any("speak" in t for t in types))
+        self._assert_intent("who was confucius", "who")
+
+    def test_when_did_confucius_live(self):
+        self._assert_intent("when did confucius live", "ConfuciusLive")
+
+    def test_when_was_confucius_born(self):
+        self._assert_intent("when was confucius born", "ConfuciusBirth")
+
+    def test_when_did_confucius_die(self):
+        self._assert_intent("when did confucius die", "ConfuciusDeath")
