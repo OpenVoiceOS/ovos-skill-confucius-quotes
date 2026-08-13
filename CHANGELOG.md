@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.4.0a2) (2026-08-13)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.4.0a1...0.4.0a2)
+
+**Merged pull requests:**
+
+- test: golden-utterance e2e suite for ovos-skill-confucius-quotes [\#65](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/65) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.4.0a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.4.0a1) (2026-08-10)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.3.1a2...0.4.0a1)
