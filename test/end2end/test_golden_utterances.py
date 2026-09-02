@@ -1,11 +1,15 @@
 """Golden-utterance end-to-end coverage for ovos-skill-confucius-quotes (en-US).
 
 ``golden_utterances.jsonl`` vendors the shared ovoscope corpus slice for
-``ovos-skill-confucius-quotes.openvoiceos`` (6 rows, including two
-keyword-order stubs -- "quote confucius", "alive when confucius" -- kept
-as-is since they route correctly: Adapt's ``.require()`` matching is
-order-independent) supplemented with 7 rows derived from this skill's own
-dialogs/vocab and its existing smoke test, for broader phrasing coverage.
+``ovos-skill-confucius-quotes.openvoiceos`` supplemented with rows derived
+from this skill's own dialogs/vocab and its existing smoke test, for broader
+phrasing coverage. All four ``Confucius*`` intents are matched via Padatious
+``.intent`` templates rather than Adapt. Padatious templates are order
+sensitive, so the original corpus rows that relied on Adapt's
+order-independent ``.require()`` matching ("alive when confucius", "birth
+confucius", "death confucius") were reworded to a canonical phrasing that the
+``.intent`` templates actually cover; "quote confucius" is covered literally
+and was kept unchanged.
 
 Each row is asserted via the ``ovos.intent.matched`` bus message's
 ``data.intent_name`` field (observed directly against this skill's message
