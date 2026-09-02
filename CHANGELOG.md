@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0a3](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.4.0a3) (2026-09-02)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.4.0a2...0.4.0a3)
+
+**Merged pull requests:**
+
+- refactor: migrate adapt intents to intent files [\#67](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/67) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.4.0a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.4.0a2) (2026-08-13)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.4.0a1...0.4.0a2)
