@@ -2,7 +2,7 @@
 
 These mirror ``test_intents_en_us.py`` but drop every Adapt pipeline stage
 from the session pipeline, leaving only Padatious/Padacioso. They prove the
-``ConfuciusQuote``/``ConfuciusLive``/``ConfuciusBirth``/``ConfuciusDeath``
+``ConfuciusQuote``/``confucius_lifespan``
 intents are resolved from the ``.intent`` files under ``locale/en-US/intents/``
 rather than from the (now removed) ``IntentBuilder().require(...)`` Adapt
 definitions.
@@ -51,10 +51,10 @@ class TestConfuciusIntentsEnUSAdaptless(unittest.TestCase):
         self._assert_intent("give me a confucius quote", "ConfuciusQuote")
 
     def test_when_did_confucius_live(self):
-        self._assert_intent("when did confucius live", "ConfuciusLive")
+        self._assert_intent("when did confucius live", "confucius_lifespan")
 
     def test_when_was_confucius_born(self):
-        self._assert_intent("when was confucius born", "ConfuciusBirth")
+        self._assert_intent("when was confucius born", "confucius_lifespan")
 
     def test_when_did_confucius_die(self):
-        self._assert_intent("when did confucius die", "ConfuciusDeath")
+        self._assert_intent("when did confucius die", "confucius_lifespan")

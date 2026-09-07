@@ -55,10 +55,16 @@ class TestConfuciusIntentsEnUS(unittest.TestCase):
         self._assert_intent("who was confucius", "who")
 
     def test_when_did_confucius_live(self):
-        self._assert_intent("when did confucius live", "ConfuciusLive")
+        self._assert_intent("when did confucius live", "confucius_lifespan")
 
     def test_when_was_confucius_born(self):
-        self._assert_intent("when was confucius born", "ConfuciusBirth")
+        self._assert_intent("when was confucius born", "confucius_lifespan")
 
     def test_when_did_confucius_die(self):
-        self._assert_intent("when did confucius die", "ConfuciusDeath")
+        self._assert_intent("when did confucius die", "confucius_lifespan")
+
+    def test_when_was_confucius_last_alive(self):
+        self._assert_intent("when was confucius last alive", "confucius_lifespan")
+
+    def test_is_confucius_still_alive(self):
+        self._assert_intent("is confucius still alive", "confucius_lifespan")

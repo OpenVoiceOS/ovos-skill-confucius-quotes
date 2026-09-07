@@ -17,6 +17,7 @@ Say one of these phrases to your assistant:
 * "Quote from Confucius"
 * "When was Confucius born"
 * "When did Confucius die"
+* "Is Confucius still alive"
 
 ## Related projects
 * [OpenVoiceOS/ovos-workshop](https://github.com/OpenVoiceOS/ovos-workshop) — the skill framework this skill builds on.
