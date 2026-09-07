@@ -3,7 +3,7 @@
 ``golden_utterances.jsonl`` vendors the shared ovoscope corpus slice for
 ``ovos-skill-confucius-quotes.openvoiceos`` supplemented with rows derived
 from this skill's own dialogs/vocab and its existing smoke test, for broader
-phrasing coverage. All four ``Confucius*`` intents are matched via Padatious
+phrasing coverage. Both ``Confucius*`` intents are matched via Padatious
 ``.intent`` templates rather than Adapt. Padatious templates are order
 sensitive, so the original corpus rows that relied on Adapt's
 order-independent ``.require()`` matching ("alive when confucius", "birth

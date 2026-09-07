@@ -18,23 +18,9 @@ class ConfuciusQuotesSkill(OVOSSkill):
         self.speak(utterance, wait=True)
         self.gui.release()
 
-    @intent_handler("ConfuciusLive.intent")
-    def handle_live(self, message):
-        utterance = self.dialog_renderer.render("live", {})
-        self.show_confucius(utterance)
-        self.speak(utterance, wait=True)
-        self.gui.release()
-
-    @intent_handler("ConfuciusBirth.intent")
-    def handle_birth(self, message):
-        utterance = self.dialog_renderer.render("birth", {})
-        self.show_confucius(utterance)
-        self.speak(utterance, wait=True)
-        self.gui.release()
-
-    @intent_handler("ConfuciusDeath.intent")
-    def handle_death(self, message):
-        utterance = self.dialog_renderer.render("death", {})
+    @intent_handler("confucius_lifespan.intent")
+    def handle_lifespan(self, message):
+        utterance = self.dialog_renderer.render("lifespan", {})
         self.show_confucius(utterance)
         self.speak(utterance, wait=True)
         self.gui.release()
