@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.0a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.5.0a1) (2026-09-07)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.4.0a4...0.5.0a1)
+
+**Merged pull requests:**
+
+- feat: gl-ES it-IT kab pt-BR nl-NL sv-SE locale parity [\#72](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/72) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.4.0a4](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.4.0a4) (2026-09-07)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.4.0a3...0.4.0a4)
