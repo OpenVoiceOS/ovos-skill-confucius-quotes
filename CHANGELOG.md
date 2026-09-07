@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0a4](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.4.0a4) (2026-09-07)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.4.0a3...0.4.0a4)
+
+**Merged pull requests:**
+
+- refactor: one lifespan intent stating both dates [\#70](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/70) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.4.0a3](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.4.0a3) (2026-09-02)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.4.0a2...0.4.0a3)
