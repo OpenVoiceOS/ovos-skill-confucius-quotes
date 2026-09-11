@@ -1,5 +1,4 @@
 from ovos_workshop.decorators import intent_handler
-from ovos_workshop.intents import IntentBuilder
 from ovos_workshop.skills import OVOSSkill
 
 
@@ -12,30 +11,16 @@ class ConfuciusQuotesSkill(OVOSSkill):
                             override_animations=True,
                             fill='PreserveAspectFit')
 
-    @intent_handler(IntentBuilder("ConfuciusQuote").require('confucius').require('quote'))
+    @intent_handler("ConfuciusQuote.intent")
     def handle_quote(self, message):
         utterance = self.dialog_renderer.render("quote", {})
         self.show_confucius(utterance)
         self.speak(utterance, wait=True)
         self.gui.release()
 
-    @intent_handler(IntentBuilder("ConfuciusLive").require('confucius').require('when').require('live'))
-    def handle_live(self, message):
-        utterance = self.dialog_renderer.render("live", {})
-        self.show_confucius(utterance)
-        self.speak(utterance, wait=True)
-        self.gui.release()
-
-    @intent_handler(IntentBuilder("ConfuciusBirth").require('confucius').require('birth'))
-    def handle_birth(self, message):
-        utterance = self.dialog_renderer.render("birth", {})
-        self.show_confucius(utterance)
-        self.speak(utterance, wait=True)
-        self.gui.release()
-
-    @intent_handler(IntentBuilder("ConfuciusDeath").require('confucius').require('death'))
-    def handle_death(self, message):
-        utterance = self.dialog_renderer.render("death", {})
+    @intent_handler("confucius_lifespan.intent")
+    def handle_lifespan(self, message):
+        utterance = self.dialog_renderer.render("lifespan", {})
         self.show_confucius(utterance)
         self.speak(utterance, wait=True)
         self.gui.release()
