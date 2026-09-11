@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.0a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.5.0a2) (2026-09-11)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.5.0a1...0.5.0a2)
+
+**Merged pull requests:**
+
+- test\(e2e\): assert dialog content, not mere speak presence [\#74](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/74) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.5.0a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.5.0a1) (2026-09-07)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.4.0a4...0.5.0a1)
