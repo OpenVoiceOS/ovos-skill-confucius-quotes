@@ -32,7 +32,7 @@ LIFESPAN_LINES = _dialog_lines("lifespan")
 WHO_LINES = _dialog_lines("confucius")
 
 _DIALOG_LINES = {
-    "ConfuciusQuote": QUOTE_LINES,
+    "confucius_quote": QUOTE_LINES,
     "who": WHO_LINES,
     "confucius_lifespan": LIFESPAN_LINES,
 }
@@ -84,7 +84,7 @@ class TestConfuciusIntentsEnUS(unittest.TestCase):
         )
 
     def test_confucius_quote(self):
-        self._assert_intent("tell me a confucius quote", "ConfuciusQuote")
+        self._assert_intent("tell me a confucius quote", "confucius_quote")
 
     def test_who_was_confucius(self):
         self._assert_intent("who was confucius", "who")

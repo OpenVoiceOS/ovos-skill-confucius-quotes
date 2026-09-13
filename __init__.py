@@ -11,7 +11,7 @@ class ConfuciusQuotesSkill(OVOSSkill):
                             override_animations=True,
                             fill='PreserveAspectFit')
 
-    @intent_handler("ConfuciusQuote.intent")
+    @intent_handler("confucius_quote.intent")
     def handle_quote(self, message):
         utterance = self.dialog_renderer.render("quote", {})
         self.show_confucius(utterance)
