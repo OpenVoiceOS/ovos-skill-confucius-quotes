@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.1a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.5.1a1) (2026-09-13)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.5.0a2...0.5.1a1)
+
+**Merged pull requests:**
+
+- fix: rename ConfuciusQuote.intent to an OVOS-INTENT-2 base name [\#76](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/76) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.5.0a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.5.0a2) (2026-09-11)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.5.0a1...0.5.0a2)
