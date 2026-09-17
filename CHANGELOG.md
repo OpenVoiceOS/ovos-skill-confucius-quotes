@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.7.0a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.7.0a1) (2026-09-17)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.6.0a1...0.7.0a1)
+
+**Merged pull requests:**
+
+- chore: remove dead locale resources [\#80](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/80) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
+## [0.6.0a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.6.0a1) (2026-09-17)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.5.1a1...0.6.0a1)
+
+**Merged pull requests:**
+
+- feat\(locale\): fill es-ES and eu-ES gaps against en-US [\#79](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/79) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+- feat\(locale\): fill pt-PT gap against en-US [\#78](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/78) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.5.1a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.5.1a1) (2026-09-13)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.5.0a2...0.5.1a1)
