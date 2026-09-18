@@ -1,29 +1,28 @@
-# 🎙️ Confucius Quotes Skill
+# Confucius Quotes Skill
 
-Bring the wisdom of Ancient China to your OpenVoiceOS device! This skill provides biographical information and a collection of inspiring quotes from the philosopher Confucius.
+This OpenVoiceOS skill shares biographical facts and quotes from the philosopher Confucius.
 
-## ✨ Features
-- **Wisdom on Demand**: Ask for a random quote from Confucius to inspire your day.
-- **Biographical Facts**: Learn about Confucius's life, including when he was born, when he died, and where he lived.
-- **Visual Experience**: On devices with screens, enjoy a classic portrait of Confucius alongside the spoken text.
-- **Multilingual**: Fully translated into several languages, including English, Portuguese, German, Danish, Spanish, Basque, and Catalan.
+## Features
+- Speaks a quote from Confucius on request.
+- Answers questions about his life: when he was born, when he died, and where he lived.
+- On a device with a screen, shows a portrait of Confucius next to the spoken text.
+- Supports English, Portuguese, German, Danish, Spanish, Basque, Catalan, and French.
 
-## 🚀 Installation
-The easiest way to install this skill is via pip:
+## Install
+Install the skill with pip:
 ```bash
 pip install ovos-skill-confucius-quotes
 ```
 
-## 🗣️ How to Use
-Try saying these phrases to your assistant:
+## Usage
+Try these phrases with your assistant:
 - "Who is Confucius?"
 - "Tell me a quote from Confucius."
 - "When was Confucius born?"
 - "When did Confucius die?"
 - "Where did Confucius live?"
 
-## 🛠️ Technical Details
-For developers and advanced users:
-- **Entry Point**: `ovos-skill-confucius-quotes.openvoiceos = ovos_skill_confucius_quotes:ConfuciusQuotesSkill`
-- **Plugin Type**: `ovos.plugin.skill`
-- **Source**: `https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes`
+## Technical details
+- Entry point: `ovos-skill-confucius-quotes.openvoiceos = ovos_skill_confucius_quotes:ConfuciusQuotesSkill`
+- Plugin type: `ovos.plugin.skill`
+- Source: [OpenVoiceOS/ovos-skill-confucius-quotes](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes)

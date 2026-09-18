@@ -1,4 +1,5 @@
 name: License Check
+
 on:
   pull_request:
     branches: [dev]
@@ -8,5 +9,3 @@ jobs:
   license_check:
     uses: OpenVoiceOS/gh-automations/.github/workflows/license-check.yml@dev
     secrets: inherit
-    with:
-      system_deps: "swig"
