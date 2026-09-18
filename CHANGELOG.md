@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.0a4](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.7.0a4) (2026-09-18)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.7.0a3...0.7.0a4)
+
+**Merged pull requests:**
+
+- test: add m2v-multilingual candidate-default gate [\#69](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/69) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.7.0a3](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.7.0a3) (2026-09-17)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.7.0a2...0.7.0a3)
