@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.1a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.8.1a1) (2026-09-28)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.8.0a3...0.8.1a1)
+
+**Merged pull requests:**
+
+- fix\(locale\): restore the missing fa-IR, pl-PL and ru-RU resources [\#96](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/96) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.8.0a3](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.8.0a3) (2026-09-28)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.8.0a2...0.8.0a3)
