@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.0a3](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.8.0a3) (2026-09-28)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.8.0a2...0.8.0a3)
+
+**Merged pull requests:**
+
+- test: multilang runner reads its locales from the golden files on disk [\#93](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/93) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.8.0a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.8.0a2) (2026-09-28)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.8.0a1...0.8.0a2)
