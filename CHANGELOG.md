@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.1a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.8.1a2) (2026-09-28)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.8.1a1...0.8.1a2)
+
+**Merged pull requests:**
+
+- locale: skill.json for the drafted locales, from their own intent lines [\#99](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/99) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.8.1a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.8.1a1) (2026-09-28)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.8.0a3...0.8.1a1)
