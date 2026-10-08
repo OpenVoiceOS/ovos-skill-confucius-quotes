@@ -8,10 +8,15 @@ confucius_lifespan, who), so this suite covers every locale in the fleet.
 Both intents are matched via Padatious-family .intent templates (order
 sensitive). Each row here is a mechanical expansion of that locale's own
 template lines (its own bracket-alternation choices), never a translation
-of the English rows.
+of the English rows. Terminal punctuation is normalised away: no row keeps
+a trailing question mark, full stop or other end mark the template carries,
+so check an added row against this rule, not against the template's own
+punctuation.
 
 Assertion follows test_golden_utterances.py: the ovos.intent.matched bus
-message's data.intent_name field.
+message's data.intent_name field. Rows marked needs_manual run too: the
+flag records that no native speaker vouched for the sentence, not that the
+row is exempt from matching.
 
 One MiniCroft is booted PER LOCALE (module-scoped fixture, indirectly
 parametrized by lang; pytest reuses one boot per distinct lang value
@@ -45,18 +50,12 @@ assert LANGS, "no golden_utterances_<lang>.jsonl files found"
 def _load_rows(lang):
     path = END2END_DIR / f"golden_utterances_{lang}.jsonl"
     rows = []
-    needs_manual = 0
     with open(path, encoding="utf-8") as f:
         for line in f:
             line = line.strip()
-            if not line:
-                continue
-            row = json.loads(line)
-            if row.get("needs_manual"):
-                needs_manual += 1
-                continue
-            rows.append(row)
-    assert rows or needs_manual, f"{lang}: no golden rows"
+            if line:
+                rows.append(json.loads(line))
+    assert rows, f"{lang}: no golden rows"
     return rows
 
 
@@ -118,3 +117,10 @@ def test_golden_utterance_multilang(minicroft, row):
         f"[{row['lang']}] {row['utterance']!r}: expected intent_name {expected_intent!r}, got {names!r} "
         f"(types={[m.msg_type for m in messages]!r})"
     )
+
+
+def test_every_shipping_locale_has_a_golden_file():
+    golden = {p.stem.split("_", 2)[2] for p in END2END_DIR.glob("golden_utterances_*.jsonl")}
+    locale_root = END2END_DIR.parent.parent / "locale"
+    shipping = {d.name for d in locale_root.iterdir() if d.is_dir() and any(d.rglob("*.intent"))}
+    assert golden == shipping, f"golden files {sorted(golden ^ shipping)} differ from shipping locales"
