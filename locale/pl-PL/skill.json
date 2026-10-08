@@ -1,0 +1,14 @@
+{
+  "skill_id": "ovos-skill-confucius-quotes.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes",
+  "author": "OpenVoiceOS",
+  "name": "Confucius Quotes",
+  "license": "apache-2.0",
+  "description": "Quotes from Confucius",
+  "examples": [
+    "co jest konfukcją znaną",
+    "kiedy konfiskus żył",
+    "cytat konfekcyjny"
+  ],
+  "tags": []
+}
