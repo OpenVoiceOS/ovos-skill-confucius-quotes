@@ -1,7 +1,7 @@
 """Adapt-less end-to-end intent routing tests for the en-US locale.
 
 These mirror ``test_intents_en_us.py`` but drop every Adapt pipeline stage
-from the session pipeline, leaving only Padatious/Padacioso. They prove the
+from the session pipeline, leaving only Padacioso. They prove the
 ``confucius_quote``/``confucius_lifespan``/``who`` intents are resolved from
 the ``.intent`` files under ``locale/en-US/intents/`` (or the repo root, for
 ``who.intent``) rather than from the (now removed)
@@ -17,6 +17,10 @@ from ovos_bus_client.session import Session
 from ovoscope import CaptureSession, get_minicroft
 
 SKILL_ID = "ovos-skill-confucius-quotes.openvoiceos"
+PIPELINE = [
+    "ovos-padacioso-pipeline-plugin-high",
+    "ovos-padacioso-pipeline-plugin-medium",
+]
 LOCALE_EN_US = Path(__file__).parent.parent.parent / "locale" / "en-US"
 
 
@@ -35,7 +39,7 @@ _DIALOG_LINES = {
 class TestConfuciusIntentsEnUSAdaptless(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.minicroft = get_minicroft([SKILL_ID])
+        cls.minicroft = get_minicroft([SKILL_ID], default_pipeline=PIPELINE)
 
     @classmethod
     def tearDownClass(cls):
@@ -43,11 +47,7 @@ class TestConfuciusIntentsEnUSAdaptless(unittest.TestCase):
 
     def _run(self, text):
         session = Session("test-session-adaptless")
-        session.pipeline = [
-            "ovos-padatious-pipeline-plugin-high",
-            "ovos-padacioso-pipeline-plugin-high",
-            "ovos-padacioso-pipeline-plugin-medium",
-        ]
+        session.pipeline = list(PIPELINE)
         utterance = Message(
             "recognizer_loop:utterance",
             {"utterances": [text], "lang": "en-US"},

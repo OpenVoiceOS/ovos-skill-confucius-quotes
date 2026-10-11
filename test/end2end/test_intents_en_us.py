@@ -16,6 +16,13 @@ from ovos_bus_client.session import Session
 from ovoscope import CaptureSession, get_minicroft
 
 SKILL_ID = "ovos-skill-confucius-quotes.openvoiceos"
+PIPELINE = [
+    "ovos-adapt-pipeline-plugin-high",
+    "ovos-padacioso-pipeline-plugin-high",
+    "ovos-adapt-pipeline-plugin-medium",
+    "ovos-padacioso-pipeline-plugin-medium",
+    "ovos-adapt-pipeline-plugin-low",
+]
 LOCALE_EN_US = Path(__file__).parent.parent.parent / "locale" / "en-US"
 
 
@@ -41,7 +48,7 @@ _DIALOG_LINES = {
 class TestConfuciusIntentsEnUS(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.minicroft = get_minicroft([SKILL_ID])
+        cls.minicroft = get_minicroft([SKILL_ID], default_pipeline=PIPELINE)
 
     @classmethod
     def tearDownClass(cls):
@@ -49,14 +56,7 @@ class TestConfuciusIntentsEnUS(unittest.TestCase):
 
     def _run(self, text):
         session = Session("test-session")
-        session.pipeline = [
-            "ovos-adapt-pipeline-plugin-high",
-            "ovos-padatious-pipeline-plugin-high",
-            "ovos-padacioso-pipeline-plugin-high",
-            "ovos-adapt-pipeline-plugin-medium",
-            "ovos-padacioso-pipeline-plugin-medium",
-            "ovos-adapt-pipeline-plugin-low",
-        ]
+        session.pipeline = list(PIPELINE)
         utterance = Message(
             "recognizer_loop:utterance",
             {"utterances": [text], "lang": "en-US"},

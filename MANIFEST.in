@@ -1,4 +1,2 @@
 recursive-include locale *
 recursive-include gui *
-include *.txt
-include test/requirements.txt
