@@ -3,10 +3,8 @@
 Boots the skill under the candidate default engine -- the m2v multilingual
 classifier (``OpenVoiceOS/ovos-m2v-intents-multi-128M-v5``) via ovoscope's
 ``get_m2v_minicroft`` -- and replays a representative slice of this skill's
-own golden utterances (``golden_utterances.jsonl``) through it. Padatious
-stays the skill's deterministic floor (see ``test_golden_utterances.py``);
-this gate validates the candidate model that may replace it as the shipping
-default.
+own en-US golden utterances through it. ``test_golden_utterances.py`` covers
+every locale on the m2v prototype pipeline; this gate covers the classifier.
 
 Each row asserts both routing (the classifier picks this skill's registered
 intent id) and effect (the rendered ``speak`` text carries real dialog
@@ -15,8 +13,6 @@ content, not the bare dialog name).
 Run:
     uv run pytest test/end2end/test_m2v_gate.py -v
 """
-import json
-from pathlib import Path
 
 import pytest
 from ovos_bus_client.message import Message
@@ -25,8 +21,6 @@ from ovoscope import CaptureSession, get_m2v_minicroft
 
 SKILL_ID = "ovos-skill-confucius-quotes.openvoiceos"
 LANG = "en-US"
-
-GOLDEN_PATH = Path(__file__).parent / "golden_utterances.jsonl"
 
 # One representative utterance per intent, pulled from the skill's own golden set.
 ROWS = [
