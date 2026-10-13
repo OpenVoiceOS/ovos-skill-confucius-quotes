@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.2a3](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.8.2a3) (2026-10-13)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.8.2a2...0.8.2a3)
+
+**Merged pull requests:**
+
+- test: natural golden rows and an m2v gate for every locale [\#105](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/105) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.8.2a2](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.8.2a2) (2026-10-08)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.8.2a1...0.8.2a2)
