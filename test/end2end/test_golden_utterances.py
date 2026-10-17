@@ -34,18 +34,25 @@ TIERS = ("high", "medium", "low")
 MIN_MATCH_RATE = 0.8
 # A locale also fails when any of its intents has fewer matched rows than this.
 MIN_MATCHED_ROWS_PER_INTENT = 1
-# Locales below MIN_MATCH_RATE after natural and machine-translated lines,
-# mapped to the rate measured in two runs and the reason. For a listed locale
-# the rate check is a non-strict xfail, but the locale still fails when an
-# intent is below MIN_MATCHED_ROWS_PER_INTENT or when its rate drops more than
-# GAP_TOLERANCE below the measured rate.
+# Locales below MIN_MATCH_RATE, mapped to the rate measured as the worst of
+# three runs and the reason. For a listed locale the rate check is an xfail,
+# but the locale still fails when an intent is below MIN_MATCHED_ROWS_PER_INTENT,
+# when its rate drops more than GAP_TOLERANCE below the measured rate, or when
+# it reaches MIN_MATCH_RATE: remove the entry then.
 GOLDEN_LOCALE_GAPS = {
-    "es-ES": (0.786, "78.6% of rows match in two runs; without blacklist words "
-                     "that block natural requests, m2v confuses who and "
-                     "confucius_quote, so a Spanish speaker must write lines"),
-    "pl-PL": (0.733, "73.3% of rows match in two runs; m2v ignores the person's "
-                     "name, and the linguonnx en->pl translations of the en-US lines "
-                     "are word salad, so a Polish speaker must write lines"),
+    "es-CO": (0.786, "3 of 14 rows miss: 'quiero oír un proverbio de confucio' "
+                     "matches nothing; 'háblame de confucio' and 'qué sabes de "
+                     "confucio' land on confucius_quote; published m2v model "
+                     "predates these templates; remove after retrain"),
+    "fr-FR": (0.786, "3 of 14 rows miss: \"j'aimerais entendre un proverbe de "
+                     "confucius\" matches nothing; \"qu'est-ce que tu sais sur "
+                     "confucius\" lands on confucius_quote; \"est-ce que confucius "
+                     "vit encore aujourd'hui\" lands on who; published m2v model "
+                     "predates these templates; remove after retrain"),
+    "ru-RU": (0.786, "3 of 14 rows miss: two match nothing and 'что тебе "
+                     "известно про конфуция' lands on confucius_quote; "
+                     "published m2v model predates these templates; remove "
+                     "after retrain"),
 }
 GAP_TOLERANCE = 0.10
 END2END_DIR = Path(__file__).parent
@@ -71,6 +78,17 @@ NEGATIVE_KNOWN_CLAIMS = {
         "расскажи анекдот": "confucius_quote",
         "когда родился пушкин": "confucius_lifespan",
     },
+}
+# Negative rows the published m2v model claims for this skill on every boot
+# (three runs each), because it predates these templates: remove after
+# retrain. Unlike NEGATIVE_KNOWN_CLAIMS, each claim here must occur, so a
+# claim that stops occurring fails the test and the entry is removed.
+NEGATIVE_PUBLISHED_MODEL_CLAIMS = {
+    "es-CO": {"cuándo nació gabriel garcía márquez": "confucius_lifespan"},
+    "es-ES": {"cuándo nació cervantes": "confucius_lifespan"},
+    "gl-ES": {"cando naceu rosalía de castro": "confucius_lifespan"},
+    "pt-PT": {"quando nasceu camões": "confucius_lifespan"},
+    "sv-SE": {"när föddes astrid lindgren": "confucius_lifespan"},
 }
 
 
@@ -137,8 +155,11 @@ def test_golden_rows_match_their_intent(lang):
             f"[{lang}] {rate:.1%} of rows match, more than {GAP_TOLERANCE:.0%} "
             f"below the measured {measured:.1%}"
         )
-        if rate < MIN_MATCH_RATE:
-            pytest.xfail(f"[{lang}] {rate:.1%} of rows match: {reason}")
+        assert rate < MIN_MATCH_RATE, (
+            f"[{lang}] {rate:.1%} of rows match, the gap is closed: remove it "
+            f"from GOLDEN_LOCALE_GAPS"
+        )
+        pytest.xfail(f"[{lang}] {rate:.1%} of rows match: {reason}")
     assert rate >= MIN_MATCH_RATE, (
         f"[{lang}] {rate:.1%} of rows match, below {MIN_MATCH_RATE:.0%}:\n  " + "\n  ".join(misses)
     )
@@ -152,7 +173,8 @@ def test_golden_rows_match_their_intent(lang):
 ])
 def test_negative_rows_match_no_skill_intent(lang):
     rows = NEGATIVE_ROWS[lang]
-    known = NEGATIVE_KNOWN_CLAIMS.get(lang, {})
+    retrain = NEGATIVE_PUBLISHED_MODEL_CLAIMS.get(lang, {})
+    known = {**NEGATIVE_KNOWN_CLAIMS.get(lang, {}), **retrain}
     matched = _match_all(lang, rows)
     claims = [(row["utterance"], got.removeprefix(f"{SKILL_ID}:"))
               for row, got in zip(rows, matched)
@@ -162,6 +184,10 @@ def test_negative_rows_match_no_skill_intent(lang):
     print(f"[{lang}] {len(claims)} of {len(rows)} negative rows claimed, "
           f"{len(unknown)} not in NEGATIVE_KNOWN_CLAIMS", *unknown, sep="\n  ")
     assert not unknown, f"[{lang}] negative rows matched this skill:\n  " + "\n  ".join(unknown)
+    gone = [f"{utterance!r}: {intent}" for utterance, intent in retrain.items()
+            if (utterance, intent) not in claims]
+    assert not gone, (f"[{lang}] claims no longer made, remove them from "
+                      f"NEGATIVE_PUBLISHED_MODEL_CLAIMS:\n  " + "\n  ".join(gone))
 
 
 LOCALE_ROOT = END2END_DIR.parents[1] / "locale"
