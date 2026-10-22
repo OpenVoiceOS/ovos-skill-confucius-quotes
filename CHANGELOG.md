@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.3a1](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.8.3a1) (2026-10-22)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.8.2a3...0.8.3a1)
+
+**Merged pull requests:**
+
+- fix: add natural quote phrasings so quotes are not read as who-is [\#108](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/pull/108) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.8.2a3](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/tree/0.8.2a3) (2026-10-13)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes/compare/0.8.2a2...0.8.2a3)
