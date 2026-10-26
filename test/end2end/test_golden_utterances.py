@@ -40,10 +40,6 @@ MIN_MATCHED_ROWS_PER_INTENT = 1
 # when its rate drops more than GAP_TOLERANCE below the measured rate, or when
 # it reaches MIN_MATCH_RATE: remove the entry then.
 GOLDEN_LOCALE_GAPS = {
-    "es-CO": (0.786, "3 of 14 rows miss: 'quiero oír un proverbio de confucio' "
-                     "matches nothing; 'háblame de confucio' and 'qué sabes de "
-                     "confucio' land on confucius_quote; "
-                     "measured on the prototype engine; remove when the rows match"),
     "fr-FR": (0.786, "3 of 14 rows miss: \"j'aimerais entendre un proverbe de "
                      "confucius\" matches nothing; \"qu'est-ce que tu sais sur "
                      "confucius\" lands on confucius_quote; \"est-ce que confucius "
