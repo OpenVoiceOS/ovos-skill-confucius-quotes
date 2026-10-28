@@ -1,0 +1,15 @@
+{
+    "skill_id": "ovos-skill-confucius-quotes.openvoiceos",
+    "source": "https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes",
+    "author": "OpenVoiceOS",
+    "name": "Citações de Confúcio",
+    "license": "apache-2.0",
+    "description": "Citações de Confúcio",
+    "examples": [
+        "Quem é Confúcio",
+        "Diz uma citação de Confúcio",
+        "Quando nasceu Confúcio",
+        "Quando morreu Confúcio"
+    ],
+    "tags": []
+}

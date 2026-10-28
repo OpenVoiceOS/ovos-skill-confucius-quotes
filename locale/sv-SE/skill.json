@@ -1,0 +1,15 @@
+{
+    "skill_id": "ovos-skill-confucius-quotes.openvoiceos",
+    "source": "https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes",
+    "author": "OpenVoiceOS",
+    "name": "Konfucius Citat",
+    "license": "apache-2.0",
+    "description": "Citat från Konfucius",
+    "examples": [
+        "Vem är Konfucius",
+        "Citat från Konfucius",
+        "När föddes Konfucius",
+        "När dog Konfucius"
+    ],
+    "tags": []
+}
