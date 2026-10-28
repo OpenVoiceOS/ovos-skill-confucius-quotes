@@ -13,16 +13,10 @@ from pathlib import Path
 
 from ovos_bus_client.message import Message
 from ovos_bus_client.session import Session
-from ovoscope import CaptureSession, get_minicroft
+from ovoscope import CaptureSession
+from ovoscope.routing import PIPELINE, TALLY, get_prototype_minicroft
 
 SKILL_ID = "ovos-skill-confucius-quotes.openvoiceos"
-PIPELINE = [
-    "ovos-adapt-pipeline-plugin-high",
-    "ovos-padacioso-pipeline-plugin-high",
-    "ovos-adapt-pipeline-plugin-medium",
-    "ovos-padacioso-pipeline-plugin-medium",
-    "ovos-adapt-pipeline-plugin-low",
-]
 LOCALE_EN_US = Path(__file__).parent.parent.parent / "locale" / "en-US"
 
 
@@ -48,7 +42,7 @@ _DIALOG_LINES = {
 class TestConfuciusIntentsEnUS(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.minicroft = get_minicroft([SKILL_ID], default_pipeline=PIPELINE)
+        cls.minicroft = get_prototype_minicroft([SKILL_ID], lang="en-US")
 
     @classmethod
     def tearDownClass(cls):
@@ -69,7 +63,7 @@ class TestConfuciusIntentsEnUS(unittest.TestCase):
     def _assert_intent(self, text, intent):
         messages = self._run(text)
         types = [m.msg_type for m in messages]
-        self.assertIn(f"{SKILL_ID}:{intent}", types)
+        TALLY.assert_routed(text, f"{SKILL_ID}:{intent}", types)
         spoken = [
             m.data.get("utterance", "")
             for m in messages
@@ -85,6 +79,9 @@ class TestConfuciusIntentsEnUS(unittest.TestCase):
 
     def test_confucius_quote(self):
         self._assert_intent("tell me a confucius quote", "confucius_quote")
+
+    def test_give_me_a_confucius_quote(self):
+        self._assert_intent("give me a confucius quote", "confucius_quote")
 
     def test_who_was_confucius(self):
         self._assert_intent("who was confucius", "who")
